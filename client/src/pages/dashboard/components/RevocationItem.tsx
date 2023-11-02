@@ -38,15 +38,16 @@ export const RevocationItem: React.FC<Props> = ({
           {title ?? revocationRecord.revocationRegId.split(':')[6]}
         </h1>
         <div className="flex h-32 mt-2">
-          <motion.div style={{ overflowY: 'scroll' }} className="lg:max-w-[50%]">
-            {description &&
-              description.split(/\n/).map((line, i) => (
+          {description && (
+            <motion.div style={{ overflowY: 'scroll' }} className="lg:max-w-[50%]">
+              {description.split(/\n/).map((line, i) => (
                 <React.Fragment key={i}>
                   {line}
                   <br />
                 </React.Fragment>
               ))}
-          </motion.div>
+            </motion.div>
+          )}
           <div className="h-full w-1/2 mr-2 m-auto xl:w-1/5" />
           <div className="w-2/3 xl:w-1/3 flex flex-col">
             {credentialName && (

@@ -19,7 +19,7 @@ interface PreferencesState {
 const initialState: PreferencesState = {
   darkMode: false,
   showHiddenUseCases: false,
-  revocationEnabled: false,
+  revocationEnabled: true,
   characterUploadEnabled: false,
   completedUseCaseSlugs: [],
   demoCompleted: false,

@@ -2,20 +2,21 @@ import type { CustomCharacter } from '../src/content/types'
 
 import { getDateInt } from '../src/utils/dateint'
 
-export const businessCustom: CustomCharacter = {
-  name: 'John',
-  type: 'Business Owner',
+export const contractorCustom: CustomCharacter = {
+  name: 'Bob',
+  type: 'Contractor',
   image: '/public/lawyer2/lawyer2.svg',
-  description: 'John is a business owner who wants to use digital credentials to improve his business processes.',
-  revocationInfo: [
-    {
-      credentialName: 'Digital Business Card',
-      credentialIcon: '/public/student/icon-student.svg',
-      title: 'Revoke your Digital Business Card',
-      description:
-        'City of Vancouver allows you to revoke your Digital Business Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
-    },
-  ],
+  description:
+    'Bob is a contractor. To work on a project he needs to verify his qualifications issued by Technical Safety B.C.',
+  // revocationInfo: [
+  //   {
+  //     credentialName: 'Trade Qualifications Card',
+  //     credentialIcon: '/public/student/icon-student.svg',
+  //     title: 'Revoke your Trade Qualifications Card',
+  //     description:
+  //       'City of Vancouver allows you to revoke your Trade Qualifications Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
+  //   },
+  // ],
   progressBar: [
     {
       name: 'person',
@@ -51,8 +52,8 @@ export const businessCustom: CustomCharacter = {
   onboarding: [
     {
       screenId: 'PICK_CHARACTER',
-      title: 'Meet John',
-      text: 'Meet John. John is a business owner in the City of Vancouver. To help make setting up a business easier, BC Gov is going to offer John a digital Business Card to put in his BC Wallet.',
+      title: 'Meet Bob',
+      text: 'Meet Bob. Bob is a contractor. To help verify his credentials quicker, Technical Safety B.C. is going to offer Bob a Trade Qualifications Card to put in his BC Wallet.',
     },
     {
       screenId: 'SETUP_START',
@@ -68,61 +69,45 @@ export const businessCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT',
-      title: 'Connect with BC Gov',
-      text: 'John is trying to setup a new business in Vancouver. He will need a digital Business Card to begin. Use your BC Wallet to scan the QR code from the website.',
+      title: 'Connect with Technical Safety B.C.',
+      text: 'Bob will need a Trade Qualification card to work on projects. Use your BC Wallet to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'BC Gov',
+      issuer_name: 'Technical Safety B.C.',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
-      title: 'Accept your Digital Business Card',
-      text: "Your wallet now has a secure and private connection with BC Gov. You should have received an offer in BC Wallet for a Digital Business Card.\nReview what they are sending, and choose 'Accept offer'.",
+      title: 'Accept your Trade Qualification Card',
+      text: "Your wallet now has a secure and private connection with Technical Safety B.C. You should have received an offer in BC Wallet for a Digital Business Card.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: 'digital_business_card',
+          name: 'trade_qualifications_card',
           version: '1.0',
           icon: '/public/student/icon-student.svg',
           attributes: [
             {
-              name: 'business_name',
-              value: 'ABC Company',
-            },
-            {
-              name: 'business_type',
-              value: 'Private Corporation',
-            },
-            {
-              name: 'company_status',
-              value: 'Active',
-            },
-            {
-              name: 'cra_business_number',
-              value: '123456789',
-            },
-            {
-              name: 'credential_id',
+              name: 'license_number',
               value: '1234567890',
+            },
+            {
+              name: 'contractor_type',
+              value: 'Builder',
             },
             {
               name: 'family_name',
-              value: 'Smith',
+              value: 'McGraw Jr.',
             },
             {
               name: 'given_names',
-              value: 'John',
+              value: 'Bob',
             },
             {
-              name: 'identifier',
-              value: '1234567890',
+              name: 'fsr_class',
+              value: 'B',
             },
             {
-              name: 'registered_on_dateint',
-              value: `${getDateInt(0)}`,
-            },
-            {
-              name: 'role',
-              value: `Owner`,
+              name: 'expiry_date',
+              value: `${getDateInt(1)}`,
             },
           ],
         },
@@ -137,20 +122,20 @@ export const businessCustom: CustomCharacter = {
   ],
   useCases: [
     {
-      id: 'businessLicence',
-      name: 'Business Licence',
+      id: 'permitApplication',
+      name: 'Permit Application in the City of Vancouver',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a business licence in the City of Vancouver',
-          text: 'John can get a business licence from the City of Vancouver using his Digital Business Card. They require proof that you’re a business owner in B.C.',
+          title: 'Apply for a permit in the City of Vancouver',
+          text: 'Bob can apply for a permit in the City of Vancouver and use his Trade Qualifications Card to verify his qualifications.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start proving you’re a business owner',
-          text: "City of Vancouver offers a quick way to apply for a business licence if you can prove you're a business owner. Scan the QR code to get started.",
-          image: '/public/lawyer2/useCases/courtServices/courtServicesOverlay.png',
+          title: 'Start proving your qualifications',
+          text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code to get started.',
+          image: '/public/contractor/useCases/posseOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/lawyer2/connection/lsbc-logo.png' },
         },
         {
@@ -163,18 +148,14 @@ export const businessCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/lawyer2/connection/lsbc-logo.png',
-                name: 'digital_business_card',
+                name: 'trade_qualifications_card',
                 properties: [
-                  'business_name',
-                  'business_type',
-                  'company_status',
-                  'cra_business_number',
-                  'credential_id',
+                  'license_number',
+                  'contractor_type',
                   'family_name',
                   'given_names',
-                  'identifier',
-                  'registered_on_dateint',
-                  'role',
+                  'fsr_class',
+                  'expiry_date',
                 ],
               },
             ],
@@ -183,7 +164,7 @@ export const businessCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve proved to the City of Vancouver that you’re a business owner from B.C. You can now start your new business with the busincess licence. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
+          text: 'You’ve proved to the City of Vancouver that you’re a qualified contractor. You can now continue with the permit application process. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
