@@ -29,10 +29,10 @@ These steps assume that you have docker installed
 These steps are executed from the root folder of the project: 
   
 Build the client: 
-> docker build -t bc-wallet-demo-client . -f DockerfileClient  
+> docker build -t bc-wallet-demo-client . -f client/Dockerfile
   
 Build the server:
-> docker build -t bc-wallet-demo-server . -f DockerfileServer  
+> docker build -t bc-wallet-demo-server . -f server/Dockerfile
   
 Start the server:
 > docker run --name bc-wallet-demo-server -p5000:5000 --rm --env-file server/.env bc-wallet-demo-server  
