@@ -150,7 +150,7 @@ export const businessCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving you’re a business owner',
           text: "City of Vancouver offers a quick way to apply for a business licence if you can prove you're a business owner. Scan the QR code to get started.",
-          image: '/public/lawyer2/useCases/courtServices/courtServicesOverlay.png',
+          image: '/public/business/useCases/businessOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/lawyer2/connection/lsbc-logo.png' },
         },
         {
