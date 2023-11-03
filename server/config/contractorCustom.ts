@@ -5,7 +5,7 @@ import { getDateInt } from '../src/utils/dateint'
 export const contractorCustom: CustomCharacter = {
   name: 'Bob',
   type: 'Contractor',
-  image: '/public/lawyer2/lawyer2.svg',
+  image: '/public/contractor/contractor.svg',
   description:
     'Bob is a contractor. To work on a project he needs to verify his qualifications issued by Technical Safety B.C.',
   // revocationInfo: [

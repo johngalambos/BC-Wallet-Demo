@@ -5,7 +5,7 @@ import { getDateInt } from '../src/utils/dateint'
 export const businessCustom: CustomCharacter = {
   name: 'John',
   type: 'Business Owner',
-  image: '/public/lawyer2/lawyer2.svg',
+  image: '/public/business/business.svg',
   description: 'John is a business owner who wants to use digital credentials to improve his business processes.',
   revocationInfo: [
     {
