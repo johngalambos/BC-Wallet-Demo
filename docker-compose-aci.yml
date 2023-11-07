@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  frontend:
+    image: ${CONTAINER_REGISTRY_LOGIN_SERVER}/${FRONTEND_IMAGE_NAME}
+    build: 
+      context: ./
+      dockerfile: ./client/Dockerfile
+    volumes:
+      - type: bind
+        source: ./client/Caddyfile
+        target: /etc/caddy/Caddyfile
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - backend
+    env_file:
+      - ./client/.env
+  backend:
+    image: ${CONTAINER_REGISTRY_LOGIN_SERVER}/${BACKEND_IMAGE_NAME}
+    build: 
+      context: ./
+      dockerfile: ./server/Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env

@@ -40,6 +40,10 @@ Start the server:
 Start the client:
 > docker run --name bc-wallet-demo-client -p3000:3000 -v \`pwd\`/Caddyfile:/etc/caddy/Caddyfile --rm --env-file client/.env bc-wallet-demo-client
 
+Windows:
+> docker run --name bc-wallet-demo-client -p3000:3000 -v %cd%/Caddyfile:/etc/caddy/Caddyfile --rm --env-file client/.env bc-wallet-demo-client
+
+
 The application will now be running at http://localhost:3000
 
 ## Contributing
