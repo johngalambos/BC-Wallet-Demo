@@ -3,10 +3,10 @@ import type { CustomCharacter } from '../src/content/types'
 import { getDateInt } from '../src/utils/dateint'
 
 export const businessCustom: CustomCharacter = {
-  name: 'John',
+  name: 'James',
   type: 'Business Owner',
   image: '/public/business/business.svg',
-  description: 'John is a business owner who wants to use digital credentials to improve his business processes.',
+  description: 'James is a business owner who wants to use digital credentials to improve his business processes.',
   revocationInfo: [
     {
       credentialName: 'Digital Business Card',
@@ -51,13 +51,13 @@ export const businessCustom: CustomCharacter = {
   onboarding: [
     {
       screenId: 'PICK_CHARACTER',
-      title: 'Meet John',
-      text: 'Meet John. John is a business owner in the City of Vancouver. To help make setting up a business easier, BC Gov is going to offer John a digital Business Card to put in his BC Wallet.',
+      title: 'Meet James',
+      text: 'James is a sole proprietor of a business in BC. To make sharing information about his business easier, BC Gov is going to offer James a digital Business Card to put in his BC Wallet. He can use this card when interacting with the City of Vancouver.',
     },
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like certificates, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use your digital Business Card to expedite an application for a City of Vancouver business licence.',
       image: '/public/common/getStarted.svg',
     },
     {
@@ -69,7 +69,7 @@ export const businessCustom: CustomCharacter = {
     {
       screenId: 'CONNECT',
       title: 'Connect with BC Gov',
-      text: 'John is trying to setup a new business in Vancouver. He will need a digital Business Card to begin. Use your BC Wallet to scan the QR code from the website.',
+      text: 'Imagine, as James, you are logged into the BC Business Registry (see below). They want to offer you a digital Business Card. Use your BC Wallet to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
       issuer_name: 'BC Gov',
     },
@@ -110,7 +110,7 @@ export const businessCustom: CustomCharacter = {
             },
             {
               name: 'given_names',
-              value: 'John',
+              value: 'James',
             },
             {
               name: 'identifier',
@@ -138,12 +138,12 @@ export const businessCustom: CustomCharacter = {
   useCases: [
     {
       id: 'businessLicence',
-      name: 'Business Licence',
+      name: 'Apply for a City of Vancouver Business Licence',
       screens: [
         {
           screenId: 'START',
           title: 'Apply for a business licence in the City of Vancouver',
-          text: 'John can get a business licence from the City of Vancouver using his Digital Business Card. They require proof that you’re a business owner in B.C.',
+          text: "James (that's you in this demo)  can get a business licence from the City of Vancouver using his digital Business Card. The City previously required you to upload your ID and other documentation proving your identity and ownership of a business. Now you can optionally use your digital Business Card",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -156,10 +156,10 @@ export const businessCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. Court Services Branch is requesting that you prove only what is needed.',
+          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. The City is requesting that you prove only what is needed.',
           requestOptions: {
             title: 'City of Vancouver Request',
-            text: 'City of Vnacouver would like some of your personal information.',
+            text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/lawyer2/connection/lsbc-logo.png',
@@ -183,7 +183,7 @@ export const businessCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve proved to the City of Vancouver that you’re a business owner from B.C. You can now start your new business with the busincess licence. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
+          text: "You've proved to the City of Vancouver that you're the sole proprietor of a business. They can now quickly move forward to issue your business licence. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],

@@ -53,12 +53,12 @@ export const contractorCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Bob',
-      text: 'Meet Bob. Bob is a contractor. To help verify his credentials quicker, Technical Safety B.C. is going to offer Bob a Trade Qualifications Card to put in his BC Wallet.',
+      text: 'Bob is a contractor. To help verify his credentials quicker, Technical Safety B.C. is going to offer Bob a Trade Qualifications Card to put in his BC Wallet.',
     },
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licenses and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
       image: '/public/common/getStarted.svg',
     },
     {
@@ -141,10 +141,10 @@ export const contractorCustom: CustomCharacter = {
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: 'BC Wallet will now ask you to confirm what to send. Notice how you’re not sharing your entire credential. Court Services Branch is requesting that you prove only what is needed.',
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
           requestOptions: {
             title: 'City of Vancouver Request',
-            text: 'City of Vnacouver would like some of your personal information.',
+            text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/lawyer2/connection/lsbc-logo.png',

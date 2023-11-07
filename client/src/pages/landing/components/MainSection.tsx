@@ -41,11 +41,11 @@ export const MainSection: React.FC = () => {
   const renderMobileTitle = (
     <motion.div className="flex-1 dark:text-white text-left text-4xl font-semibold my-8 leading-snug ">
       <div className="overflow-hidden py-1">
-        <motion.h1 variants={landingTitle}>BC Wallet Showcase</motion.h1>
+        <motion.h1 variants={landingTitle}>City of Vancouver BC Wallet Showcase</motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey">
-          Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.
+          Explore how you can use BC Wallet to interact with the City of Vancouver in a way that's safe and secure.
         </motion.h2>
       </div>
       <div className="flex flex-col justify-center text-base sxl:text-lg font-normal mt-6 m-auto">
@@ -64,7 +64,7 @@ export const MainSection: React.FC = () => {
           className="bg-white dark:bg-bcgov-blue text-black dark:text-white py-3 px-5 mx-8 mt-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={() => null}
         >
-          Get to know us &nbsp;
+          Get to know the BC Wallet Team &nbsp;
           <FiExternalLink className="inline h-6 pb-1" />
         </motion.button>
       </div>
@@ -74,14 +74,14 @@ export const MainSection: React.FC = () => {
   const renderDesktopTitle = (
     <motion.div className="flex-1 text-left text-bcgov-black dark:text-bcgov-white font-semibold text-4xl lg:text-5xl xl:text-6xl m-auto">
       <div className="overflow-hidden py-1 leading-tight">
-        <motion.h1 variants={landingTitle}>BC Wallet Showcase</motion.h1>
+        <motion.h1 variants={landingTitle}>City of Vancouver BC Wallet Showcase</motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2
           variants={fadeDelay}
           className="text-base lg:text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey"
         >
-          Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.
+          Explore how you can use BC Wallet to interact with the City of Vancouver in a way that's safe and secure.
         </motion.h2>
       </div>
       <div className="flex flex-row justify-start text-base sxl:text-lg  font-normal mt-6">
@@ -100,7 +100,7 @@ export const MainSection: React.FC = () => {
             whileHover={buttonHover}
             className="bg-white dark:bg-bcgov-gold text-black dark:text-bcgov-black py-3 px-5 ml-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           >
-            <p className="inline">Get to know us &nbsp;</p>
+            <p className="inline">Get to know the BC Wallet Team &nbsp;</p>
             <FiExternalLink className="inline h-6 pb-1" />
           </motion.button>
         </a>
