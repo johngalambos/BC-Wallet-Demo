@@ -1,10 +1,13 @@
 FROM node:fermium as base
 
 WORKDIR /app
-COPY . .
+COPY package.json yarn.lock ./
+RUN mkdir -p ./server
+COPY ./server/package.json ./server
+RUN yarn install
 RUN npm install -g typescript
 RUN npm install -g ts-node
-RUN yarn install
+COPY . .
 
 WORKDIR /app/server
 

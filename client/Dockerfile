@@ -4,9 +4,12 @@ ARG runtime_image=caddy:alpine
 # build stage
 FROM ${build_image} as build-stage
 WORKDIR /app
-COPY . .
+COPY .eslintrc.js package.json yarn.lock ./
+RUN mkdir -p ./client
+COPY ./client/package.json ./client
 RUN yarn install
-RUN yarn build
+COPY . .
+RUN yarn client:build
 
 
 # production stage
