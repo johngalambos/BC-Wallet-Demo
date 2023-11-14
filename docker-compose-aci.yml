@@ -5,10 +5,6 @@ services:
     build: 
       context: ./
       dockerfile: ./client/Dockerfile
-    volumes:
-      - type: bind
-        source: ./client/Caddyfile
-        target: /etc/caddy/Caddyfile
     ports:
       - "3000:3000"
     depends_on: 
