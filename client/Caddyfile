@@ -55,7 +55,7 @@
         }
 
         # Proxy requests to API service
-        reverse_proxy @pass :5000 {
+        reverse_proxy @pass backend:5000 {
             trusted_proxies 0.0.0.0/0
             header_up Host {upstream_hostport}
             header_up X-Forwarded-Host {host}

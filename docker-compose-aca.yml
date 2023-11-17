@@ -3,9 +3,6 @@ services:
   frontend:
     image: ${CONTAINER_REGISTRY_LOGIN_SERVER}/${FRONTEND_IMAGE_NAME}
     container_name: frontend
-    build: 
-      context: ./
-      dockerfile: ./client/Dockerfile
     ports:
       - "3000:3000"
     depends_on: 
@@ -13,8 +10,3 @@ services:
   backend:
     image: ${CONTAINER_REGISTRY_LOGIN_SERVER}/${BACKEND_IMAGE_NAME}
     container_name: backend
-    build: 
-      context: ./
-      dockerfile: ./server/Dockerfile
-    env_file:
-      - ./server/.env

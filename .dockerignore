@@ -2,3 +2,11 @@ node_modules
 client/node_modules
 server/build
 server/node_modules
+client/.env
+.env
+.github
+.husky
+.vscode
+.docker-compose-aca.yml
+.docker-compose-aci.yml
+.docker-compose.yml
