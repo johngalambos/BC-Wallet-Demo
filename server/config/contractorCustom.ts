@@ -72,7 +72,7 @@ export const contractorCustom: CustomCharacter = {
       title: 'Connect with Technical Safety B.C.',
       text: 'Bob will need a Trade Qualification card to work on projects. Use your BC Wallet to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'Technical Safety B.C.',
+      issuer_name: 'COV Showcase - Technical Safety BC',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
@@ -81,7 +81,7 @@ export const contractorCustom: CustomCharacter = {
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
-          name: 'trade_qualifications_card',
+          name: 'certificate_of_qualification',
           version: '1.0',
           icon: '/public/student/icon-student.svg',
           attributes: [
@@ -90,8 +90,8 @@ export const contractorCustom: CustomCharacter = {
               value: '1234567890',
             },
             {
-              name: 'contractor_type',
-              value: 'Builder',
+              name: 'certification_type',
+              value: 'Electrical Field Safety Representative',
             },
             {
               name: 'family_name',
@@ -148,10 +148,10 @@ export const contractorCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/lawyer2/connection/lsbc-logo.png',
-                name: 'trade_qualifications_card',
+                name: 'certificate_of_qualification',
                 properties: [
                   'license_number',
-                  'contractor_type',
+                  'certification_type',
                   'family_name',
                   'given_names',
                   'fsr_class',

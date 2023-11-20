@@ -71,7 +71,7 @@ export const businessCustom: CustomCharacter = {
       title: 'Connect with BC Gov',
       text: 'Imagine, as James, you are logged into the BC Business Registry (see below). They want to offer you a digital Business Card. Use your BC Wallet to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
-      issuer_name: 'BC Gov',
+      issuer_name: 'COV Showcase - BC Gov',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
@@ -81,7 +81,7 @@ export const businessCustom: CustomCharacter = {
       credentials: [
         {
           name: 'digital_business_card',
-          version: '1.0',
+          version: '1.0.0',
           icon: '/public/student/icon-student.svg',
           attributes: [
             {
@@ -131,7 +131,7 @@ export const businessCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: "You're all set!",
-      text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: "Congratulations, you've just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let's go!",
       image: '/public/common/onboarding-completed-light.svg',
     },
   ],
