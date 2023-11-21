@@ -90,6 +90,7 @@ export const DashboardPage: React.FC = () => {
               />
               {revokableCredentials.length > 0 && revocationEnabled && currentCharacter.revocationInfo && (
                 <RevocationContainer
+                  currentCharacter={currentCharacter}
                   revocationInfo={currentCharacter.revocationInfo}
                   revocationRecord={revokableCredentials}
                 />

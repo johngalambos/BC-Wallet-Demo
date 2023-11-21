@@ -122,6 +122,7 @@ export const contractorCustom: CustomCharacter = {
   ],
   useCases: [
     {
+      type: 'useCase',
       id: 'permitApplication',
       name: 'Permit Application in the City of Vancouver',
       screens: [

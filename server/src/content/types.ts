@@ -22,7 +22,7 @@ export interface CredentialRequest {
   icon?: string
   predicates?: { name: string; value?: string | number | (() => string | number); type: string }
   properties?: string[]
-  nonRevoked?: { to: number, from?: number }
+  nonRevoked?: { to: number; from?: number }
 }
 
 export interface CustomRequestOptions {
@@ -41,6 +41,7 @@ export interface UseCaseScreen {
 }
 
 export interface CustomUseCase {
+  type: string
   id: string
   name: string
   hidden?: boolean
@@ -55,10 +56,14 @@ export interface ProgressBarStep {
 }
 
 export interface RevocationInfoItem {
+  type: string
+  id: string
+  name: string
   credentialName: string
   credentialIcon: string
   title: string
   description: string
+  screens: UseCaseScreen[]
 }
 
 export interface CustomCharacter {

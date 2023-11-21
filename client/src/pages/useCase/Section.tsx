@@ -22,6 +22,7 @@ import { isConnected, isCredIssued } from '../../utils/Helpers'
 import { SideView } from './SideView'
 import { EndContainer } from './components/EndContainer'
 import { StartContainer } from './components/StartContainer'
+import { StartRevokeContainer } from './components/StartRevokeContainer'
 import { StepConnection } from './steps/StepConnection'
 import { StepEnd } from './steps/StepEnd'
 import { StepInformation } from './steps/StepInformation'
@@ -188,6 +189,16 @@ export const Section: React.FC<Props> = ({
           step={step}
           entity={verifier}
           requestedCredentials={step.requestOptions?.requestedCredentials}
+        />
+      )
+    }
+    if (step.screenId.startsWith('REVOKE')) {
+      return (
+        <StartRevokeContainer
+          key={step.screenId}
+          characterType={currentCharacter?.type.toLowerCase()}
+          step={step}
+          entity={verifier}
         />
       )
     }

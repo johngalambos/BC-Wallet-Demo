@@ -3,21 +3,31 @@ import type { CustomCharacter, RevocationInfoItem, RevocationRecord } from '../.
 import { motion } from 'framer-motion'
 import { startCase } from 'lodash'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { dashboardTitle, rowContainer } from '../../../FramerAnimations'
 import { revokeCredential } from '../../../api/RevocationApi'
+import { basePath } from '../../../utils/BasePath'
 
 import { RevocationItem } from './RevocationItem'
 
 export interface Props {
+  currentCharacter: CustomCharacter
   revocationRecord: RevocationRecord[]
   revocationInfo: RevocationInfoItem[]
 }
 
-export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocationInfo }) => {
+export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocationInfo, currentCharacter }) => {
+  const navigate = useNavigate()
+
+  const startUseCase = (slug: string) => {
+    navigate(`${basePath}/revoke/${slug}`)
+  }
+
   const [completedRevocations, setCompletedRevocations] = useState<string[]>([])
   const [loadingRevocations, setLoadingRevocations] = useState<string[]>([])
   const [menuExpanded, setMenuExpanded] = useState<boolean>(false)
+
   const renderUseCases = revocationRecord.map((item) => {
     const revocationKey = item.revocationRegId.split(':')[6]
     const revocationDescription = revocationInfo.find(
@@ -25,12 +35,14 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
     )
     return (
       <RevocationItem
+        slug={revocationDescription ? revocationDescription.id : 'TEST'}
         title={revocationDescription?.title}
         description={revocationDescription?.description}
         credentialName={revocationDescription?.credentialName}
         credentialIcon={revocationDescription?.credentialIcon}
         key={item.revocationRegId}
         revocationRecord={item}
+        currentCharacter={currentCharacter}
         callback={() => {
           const revocations = completedRevocations.filter((rev) => rev !== item.revocationRegId)
           setCompletedRevocations(revocations)
@@ -49,6 +61,7 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
         }}
         isCompleted={completedRevocations.includes(item.revocationRegId)}
         isLoading={loadingRevocations.includes(item.revocationRegId)}
+        start={startUseCase}
       />
     )
   })

@@ -1,4 +1,5 @@
-import type { CustomUseCase } from '../../slices/types'
+/* eslint-disable no-console */
+import type { CustomUseCase, RevocationInfoItem, UseCaseScreen } from '../../slices/types'
 
 import { trackPageView } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -25,7 +26,11 @@ import { basePath } from '../../utils/BasePath'
 
 import { Section } from './Section'
 
-export const UseCasePage: React.FC = () => {
+interface UseCasePageProps {
+  type: string
+}
+
+export const UseCasePage: React.FC<UseCasePageProps> = ({ type }) => {
   const dispatch = useAppDispatch()
   const { slug } = useParams()
   const { stepCount, sectionCount, isLoading } = useUseCaseState()
@@ -34,14 +39,18 @@ export const UseCasePage: React.FC = () => {
   const connection = useConnection()
   const { issuedCredentials } = useCredentials()
   const { proof, proofUrl } = useProof()
-  const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase>()
+  const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase | RevocationInfoItem>()
 
   const navigate = useNavigate()
   useTitle(`${currentUseCase?.name ?? 'Use case'} | BC Wallet Self-Sovereign Identity Demo`)
 
   useEffect(() => {
     if (currentCharacter && slug) {
-      setCurrentUseCase(currentCharacter.useCases.find((item) => item.id === slug))
+      setCurrentUseCase(
+        type === 'useCase'
+          ? currentCharacter.useCases.find((item) => item.id === slug)
+          : currentCharacter.revocationInfo?.find((item) => item.id === slug)
+      )
     }
   }, [])
 

@@ -9,11 +9,40 @@ export const businessCustom: CustomCharacter = {
   description: 'James is a business owner who wants to use digital credentials to improve his business processes.',
   revocationInfo: [
     {
+      type: 'revoke',
+      id: 'revokeDigitalBusinessCard',
+      name: 'Revoke your Digital Business Card',
       credentialName: 'Digital Business Card',
       credentialIcon: '/public/student/icon-student.svg',
       title: 'Revoke your Digital Business Card',
       description:
         'City of Vancouver allows you to revoke your Digital Business Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
+      screens: [
+        {
+          screenId: 'REVOKE',
+          title: 'Revoking your Digital Business Card',
+          text: "You can revoke your Digital Business Card if you no longer need your credential. Let's walk through how to revoke your credentials.",
+          image: '/public/student/useCases/revokeDigitalBusinessCard.svg',
+        },
+        {
+          screenId: 'CREDENTIALS',
+          title: 'Revoke your Digital Business Card',
+          text: 'Press the button to revoke your credentials.',
+          image: '/public/student/useCases/revokeDigitalBusinessCard.svg',
+        },
+        {
+          screenId: 'INFO',
+          title: 'Remove the revoked crediential from your BC Wallet',
+          text: "Your credentials has been revoked and you should now see a red (!) on the revoked credential in your BC Wallet. Let's remove that credential from your BC Wallet by clicking on the credential and scrolling down. Tap 'Remove from wallet' and confirm.",
+          image: '/public/student/useCases/revokeDigitalBusinessCard.svg',
+        },
+        {
+          screenId: 'STEP_END',
+          title: "You're done!",
+          text: 'You have successfully revoked your Digital Business Card and removed it from your BC Wallet.',
+          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+        },
+      ],
     },
   ],
   progressBar: [
@@ -137,6 +166,7 @@ export const businessCustom: CustomCharacter = {
   ],
   useCases: [
     {
+      type: 'useCase',
       id: 'businessLicence',
       name: 'Apply for a City of Vancouver Business Licence',
       screens: [

@@ -70,7 +70,15 @@ function App() {
               path={`${basePath}/uc/:slug`}
               element={
                 <PrivateRoute>
-                  <UseCasePage />
+                  <UseCasePage type="useCase" />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={`${basePath}/revoke/:slug`}
+              element={
+                <PrivateRoute>
+                  <UseCasePage type="revoke" />
                 </PrivateRoute>
               }
             />

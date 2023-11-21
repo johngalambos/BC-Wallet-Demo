@@ -1,5 +1,6 @@
-import type { RevocationRecord } from '../../../slices/types'
+import type { CustomCharacter, RevocationRecord } from '../../../slices/types'
 
+import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { motion } from 'framer-motion'
 import React from 'react'
 
@@ -9,6 +10,7 @@ import { prependApiUrl } from '../../../utils/Url'
 import { StartButton } from './StartButton'
 
 export interface Props {
+  slug: string
   title?: string
   description?: string
   credentialName?: string
@@ -17,9 +19,12 @@ export interface Props {
   callback: () => void
   isCompleted: boolean
   isLoading?: boolean
+  currentCharacter: CustomCharacter
+  start(slug: string): void
 }
 
 export const RevocationItem: React.FC<Props> = ({
+  slug,
   title,
   credentialName,
   credentialIcon,
@@ -28,6 +33,8 @@ export const RevocationItem: React.FC<Props> = ({
   callback,
   isCompleted,
   isLoading,
+  currentCharacter,
+  start,
 }) => {
   return (
     <motion.div variants={rowFadeX} key={revocationRecord.revocationRegId}>
@@ -66,12 +73,30 @@ export const RevocationItem: React.FC<Props> = ({
               </motion.div>
             )}
             <div className="flex flex-1 items-end justify-end">
-              <StartButton
+              {/* <StartButton
                 onClick={callback}
                 text={'REVOKE'}
                 disabled={false}
                 isCompleted={isCompleted}
                 loading={isLoading}
+              /> */}
+              <StartButton
+                onClick={() => {
+                  trackSelfDescribingEvent({
+                    event: {
+                      schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
+                      data: {
+                        action: 'start',
+                        path: `${currentCharacter?.type.toLowerCase()}_${slug}`,
+                        step: 'usecase_start',
+                      },
+                    },
+                  })
+                  start(slug)
+                }}
+                text={'START'}
+                disabled={false}
+                isCompleted={isCompleted}
               />
             </div>
           </div>
