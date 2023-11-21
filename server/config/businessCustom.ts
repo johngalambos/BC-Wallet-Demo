@@ -15,19 +15,18 @@ export const businessCustom: CustomCharacter = {
       credentialName: 'Digital Business Card',
       credentialIcon: '/public/student/icon-student.svg',
       title: 'BC Business Registry - Revoke Digital Business Card',
-      description:
-        "James no longer needs his Digital Business Card. Imagine you are the BC Business Registry and you are revoking James' Digital Business Card.",
+      description: "The BC Business Registry needs to revoke James' digital Business Card. Let's see how that works.",
       screens: [
         {
           screenId: 'REVOKE',
-          title: "BC Business Registry - Revoking James' Digital Business Card",
-          text: "BC Business Registry is the issuer for James' Digital Business Card. They are going to revoke James' credential. Let's walk through how to revoke his credential. Click start to begin!",
+          title: "BC Business Registry - Revoking James' digital Business Card",
+          text: "BC Business Registry is the issuer for James' digital Business Card. They are going to revoke James' credential. Let's walk through that process. Click start to begin!",
           image: '/public/business/useCases/businessRevokeStart.svg',
         },
         {
           screenId: 'BUTTON',
-          title: 'BC Business Registry - Revoke the Digital Business Card',
-          text: 'Once you revoke his credentials James may no longer be able to use it for services provided by the issuer. Press the button to revoke his credentials.',
+          title: 'BC Business Registry - Revoke the digital Business Card',
+          text: "Credential issuers like the Business Registry have tools to manage credentials.  Credential verifiers can easily identify revoked credentials and opt not to accept them. In this case, let's pretend we're the BC Business registry and press the button to revoke James' digital Business Card.",
           image: '/public/business/useCases/businessRevoke.svg',
         },
         {
@@ -39,7 +38,7 @@ export const businessCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "BC Business Registry has successfully revoked James' Digital Business Card. James was able to remove it from his BC Wallet.",
+          text: "BC Business Registry has successfully revoked James' digital Business Card. James was able to remove it from his BC Wallet.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -105,7 +104,7 @@ export const businessCustom: CustomCharacter = {
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your Digital Business Card',
-      text: "Your wallet now has a secure and private connection with BC Gov. You should have received an offer in BC Wallet for a Digital Business Card.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with BC Gov. You should have received an offer in BC Wallet for a digital Business Card.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
