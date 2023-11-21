@@ -20,7 +20,7 @@ export interface Props {
   isCompleted: boolean
   isLoading?: boolean
   currentCharacter: CustomCharacter
-  start(slug: string): void
+  start(slug: string, revokeId: string): void
 }
 
 export const RevocationItem: React.FC<Props> = ({
@@ -59,7 +59,7 @@ export const RevocationItem: React.FC<Props> = ({
           <div className="w-2/3 xl:w-1/3 flex flex-col">
             {credentialName && (
               <motion.div>
-                <h2 className="text-sm xl:text-base font-semibold mb-2">You'll revoke your</h2>
+                <h2 className="text-sm xl:text-base font-semibold mb-2">Issuer will revoke</h2>
                 <div className={`flex flex-row mb-2`}>
                   {credentialIcon && (
                     <img
@@ -92,7 +92,7 @@ export const RevocationItem: React.FC<Props> = ({
                       },
                     },
                   })
-                  start(slug)
+                  start(slug, revocationRecord.revocationRegId)
                 }}
                 text={'START'}
                 disabled={false}

@@ -4,7 +4,7 @@ import type { CustomUseCase, RevocationInfoItem, UseCaseScreen } from '../../sli
 import { trackPageView } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
 import { Loader } from '../../components/Loader'
@@ -31,6 +31,8 @@ interface UseCasePageProps {
 }
 
 export const UseCasePage: React.FC<UseCasePageProps> = ({ type }) => {
+  const location = useLocation()
+  const state = location.state as string | undefined
   const dispatch = useAppDispatch()
   const { slug } = useParams()
   const { stepCount, sectionCount, isLoading } = useUseCaseState()
@@ -117,6 +119,7 @@ export const UseCasePage: React.FC<UseCasePageProps> = ({ type }) => {
                 credentials={issuedCredentials}
                 proof={proof}
                 proofUrl={proofUrl}
+                revoke={state}
               />
             </motion.div>
           ) : (

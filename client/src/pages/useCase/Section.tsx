@@ -28,6 +28,7 @@ import { StepEnd } from './steps/StepEnd'
 import { StepInformation } from './steps/StepInformation'
 import { StepProof } from './steps/StepProof'
 import { StepProofOOB } from './steps/StepProofOOB'
+import { StepRevoke } from './steps/StepRevoke'
 
 export interface Props {
   section: UseCaseScreen[]
@@ -37,6 +38,7 @@ export interface Props {
   credentials: any[]
   proof?: any
   proofUrl?: string
+  revoke?: string
 }
 
 export const Section: React.FC<Props> = ({
@@ -47,6 +49,7 @@ export const Section: React.FC<Props> = ({
   credentials,
   proof,
   proofUrl,
+  revoke,
 }) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -125,6 +128,13 @@ export const Section: React.FC<Props> = ({
       }
     }
 
+    if (step?.screenId.startsWith('BUTTON')) {
+      // if (isRevokedCompleted) {
+      //   setIsForwardDisabled(false)
+      // }
+      setIsForwardDisabled(false)
+    }
+
     if (step?.screenId.startsWith('PROOF') || step?.screenId.startsWith('PROOF_OOB')) {
       if (isProofCompleted) {
         setIsForwardDisabled(false)
@@ -193,15 +203,19 @@ export const Section: React.FC<Props> = ({
       )
     }
     if (step.screenId.startsWith('REVOKE')) {
+      const entity = {
+        name: currentCharacter?.revocationInfo?.find((item) => item.id === slug)?.credentialName ?? '',
+      }
       return (
         <StartRevokeContainer
           key={step.screenId}
           characterType={currentCharacter?.type.toLowerCase()}
           step={step}
-          entity={verifier}
+          entity={entity}
         />
       )
     }
+
     if (step.screenId.startsWith('END')) {
       return <EndContainer key={step.screenId} step={step} />
     } else {
@@ -226,6 +240,9 @@ export const Section: React.FC<Props> = ({
               data-cy="section"
             >
               <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>
+                {step.screenId.startsWith('BUTTON') && (
+                  <StepRevoke key={step.screenId} step={step} revoke={revoke ?? ''} />
+                )}
                 {step.screenId.startsWith('INFO') && <StepInformation key={step.screenId} step={step} />}
                 {step.screenId.startsWith('CONNECTION') && (
                   <StepConnection newConnection={true} key={step.screenId} step={step} connection={connection} />

@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
 import type { CredentialRequest } from '../../../slices/types'
 
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import { Button } from '../../../components/Button'
 import { useCredentials } from '../../../slices/credentials/credentialsSelectors'
 
 import { ActionCard } from './ActionCard'
@@ -18,7 +20,9 @@ export const StarterInfoRevoke: React.FC<Props> = ({ title, description, entity 
     <motion.div className="flex flex-col h-full">
       <h1 className="text-4xl	font-bold my-4">{title}</h1>
       <p className="leading-loose">{description}</p>
-      <div className="flex flex-col items-center justify-center h-full"></div>
+      <div className="flex flex-col items-center justify-center h-full">
+        {entity && <ActionCard title={'Issuer is revoking'} items={[entity]} />}
+      </div>
     </motion.div>
   )
 }
