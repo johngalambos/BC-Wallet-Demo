@@ -3,42 +3,42 @@ import type { CustomCharacter } from '../src/content/types'
 import { getDateInt } from '../src/utils/dateint'
 
 export const businessCustom: CustomCharacter = {
-  name: 'James',
+  name: 'Jane',
   type: 'Business Owner',
   image: '/public/business/business.svg',
-  description: 'James is a business owner who wants to use digital credentials to improve his business processes.',
+  description: 'Jane is a business owner who wants to use digital credentials to improve her business processes.',
   revocationInfo: [
     {
       type: 'revoke',
       id: 'revokeDigitalBusinessCard',
-      name: "Revoke James' Digital Business Card",
+      name: "Revoke Jane's Digital Business Card",
       credentialName: 'Digital Business Card',
       credentialIcon: '/public/student/icon-student.svg',
       title: 'BC Business Registry - Revoke Digital Business Card',
-      description: "The BC Business Registry needs to revoke James' digital Business Card. Let's see how that works.",
+      description: "The BC Business Registry needs to revoke Jane's digital Business Card. Let's see how that works.",
       screens: [
         {
           screenId: 'REVOKE',
-          title: "BC Business Registry - Revoking James' digital Business Card",
-          text: "BC Business Registry is the issuer for James' digital Business Card. They are going to revoke James' credential. Let's walk through that process. Click start to begin!",
+          title: "BC Business Registry - Revoking Jane's digital Business Card",
+          text: "BC Business Registry is the issuer for Jane's digital Business Card. They are going to revoke Jane's credential. Let's walk through that process. Click start to begin!",
           image: '/public/business/useCases/businessRevokeStart.svg',
         },
         {
           screenId: 'BUTTON',
           title: 'BC Business Registry - Revoke the digital Business Card',
-          text: "Credential issuers like the Business Registry have tools to manage credentials.  Credential verifiers can easily identify revoked credentials and opt not to accept them. In this case, let's pretend we're the BC Business registry and press the button to revoke James' digital Business Card.",
+          text: "Credential issuers like the Business Registry have tools to manage credentials.  Credential verifiers can easily identify revoked credentials and opt not to accept them. In this case, let's pretend we're the BC Business registry and press the button to revoke Jane's digital Business Card.",
           image: '/public/business/useCases/businessRevoke.svg',
         },
         {
           screenId: 'INFO',
-          title: 'James - Remove the revoked crediential from BC Wallet',
-          text: "James' credential has been revoked by BC Business Registry. James should now see a red ( ! ) on the revoked credential in his BC Wallet.\nJames can remove that credential from his BC Wallet by clicking on the credential and scrolling down. Tap 'Remove from wallet' and confirm to remove the credential.",
+          title: 'Jane - Remove the revoked crediential from BC Wallet',
+          text: "Jane's credential has been revoked by BC Business Registry. Jane should now see a red ( ! ) on the revoked credential in her BC Wallet.\nJane can remove that credential from her BC Wallet by clicking on the credential and scrolling down. Tap 'Remove from wallet' and confirm to remove the credential.",
           image: '/public/business/useCases/businessRemoveRevoke.png',
         },
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: "BC Business Registry has successfully revoked James' digital Business Card. James was able to remove it from his BC Wallet.",
+          text: "BC Business Registry has successfully revoked Jane's digital Business Card. Jane was able to remove it from her BC Wallet.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -79,13 +79,13 @@ export const businessCustom: CustomCharacter = {
   onboarding: [
     {
       screenId: 'PICK_CHARACTER',
-      title: 'Meet James',
-      text: 'James is a sole proprietor of a business in BC. To make sharing information about his business easier, BC Gov is going to offer James a digital Business Card to put in his BC Wallet. He can use this card when interacting with the City of Vancouver.',
+      title: 'Meet Jane',
+      text: 'Jane is a sole proprietor of a business in BC. To make sharing information about her business easier, BC Gov is going to offer Jane a digital Business Card to put in her BC Wallet. She can use this card when accessing City of Vancouver services.',
     },
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like certificates, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use your digital Business Card to expedite an application for a City of Vancouver business licence.',
+      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like certificates, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use your digital Business Card to pre-fill and speed up an application for a City of Vancouver business licence.',
       image: '/public/common/getStarted.svg',
     },
     {
@@ -97,7 +97,7 @@ export const businessCustom: CustomCharacter = {
     {
       screenId: 'CONNECT',
       title: 'Connect with BC Gov',
-      text: 'Imagine, as James, you are logged into the BC Business Registry (see below). They want to offer you a digital Business Card. Use your BC Wallet to scan the QR code from the website.',
+      text: 'Imagine, as Jane, you have registered your business with the BC Business Registry. You are now ready to be issued a digital Business Card. Use your BC Wallet to scan the QR code.',
       image: '/public/student/onboarding-connect-light.svg',
       issuer_name: 'COV Showcase - BC Gov',
     },
@@ -110,7 +110,7 @@ export const businessCustom: CustomCharacter = {
         {
           name: 'digital_business_card',
           version: '1.0.0',
-          icon: '/public/student/icon-student.svg',
+          icon: '/public/business/icon-bcgov.png',
           attributes: [
             {
               name: 'business_name',
@@ -138,7 +138,7 @@ export const businessCustom: CustomCharacter = {
             },
             {
               name: 'given_names',
-              value: 'James',
+              value: 'Jane',
             },
             {
               name: 'identifier',
@@ -172,15 +172,15 @@ export const businessCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Apply for a business licence in the City of Vancouver',
-          text: "James (that's you in this demo)  can get a business licence from the City of Vancouver using his digital Business Card. The City previously required you to upload your ID and other documentation proving your identity and ownership of a business. Now you can optionally use your digital Business Card",
+          text: 'Jane (that’s you in this demo) can get a business licence from the City of Vancouver using her digital Business Card. The City requires you to upload your ID and other documentation proving your identity and ownership of the business. Now you can use your Digital Business Card instead.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Start proving you’re a business owner',
-          text: "City of Vancouver offers a quick way to apply for a business licence if you can prove you're a business owner. Scan the QR code to get started.",
+          text: 'Use your digital Business Card to prove you’re a business owner when you apply for a business licence. Enjoy a streamlined application process and faster processing times. Scan the QR code with your BC Wallet to get started.',
           image: '/public/business/useCases/businessOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/lawyer2/connection/lsbc-logo.png' },
+          verifier: { name: 'City of Vancouver', icon: '/public/business/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
@@ -191,18 +191,15 @@ export const businessCustom: CustomCharacter = {
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/lawyer2/connection/lsbc-logo.png',
+                icon: '/public/business/icon-bcgov.png',
                 name: 'digital_business_card',
                 properties: [
                   'business_name',
                   'business_type',
                   'company_status',
-                  'cra_business_number',
-                  'credential_id',
                   'family_name',
                   'given_names',
                   'identifier',
-                  'registered_on_dateint',
                   'role',
                 ],
               },

@@ -45,7 +45,7 @@ export const MainSection: React.FC = () => {
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey">
-          Explore how you can use BC Wallet to interact with the City of Vancouver in a way that's safe and secure.
+          Explore how you can use BC Wallet to access City of Vancouver services in a way that's safe and secure.
         </motion.h2>
       </div>
       <div className="flex flex-col justify-center text-base sxl:text-lg font-normal mt-6 m-auto">
@@ -81,7 +81,7 @@ export const MainSection: React.FC = () => {
           variants={fadeDelay}
           className="text-base lg:text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey"
         >
-          Explore how you can use BC Wallet to interact with the City of Vancouver in a way that's safe and secure.
+          Explore how you can use BC Wallet to access City of Vancouver services in a way that's safe and secure.
         </motion.h2>
       </div>
       <div className="flex flex-row justify-start text-base sxl:text-lg  font-normal mt-6">
