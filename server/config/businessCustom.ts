@@ -118,7 +118,7 @@ export const businessCustom: CustomCharacter = {
             },
             {
               name: 'business_type',
-              value: 'Private Corporation',
+              value: 'Sole Proprietorship',
             },
             {
               name: 'company_status',
