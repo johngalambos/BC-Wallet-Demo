@@ -77,13 +77,13 @@ export const contractorCustom: CustomCharacter = {
     {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your Trade Qualification Card',
-      text: "Your wallet now has a secure and private connection with Technical Safety B.C. You should have received an offer in BC Wallet for a Digital Business Card.\nReview what they are sending, and choose 'Accept offer'.",
+      text: "Your wallet now has a secure and private connection with Technical Safety B.C. You should have received an offer in BC Wallet for a Certificate of Qualifications.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
       credentials: [
         {
           name: 'certificate_of_qualification',
           version: '1.0',
-          icon: '/public/student/icon-student.svg',
+          icon: '/public/contractor/icon-technicalsafety.png',
           attributes: [
             {
               name: 'license_number',
@@ -124,20 +124,20 @@ export const contractorCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'permitApplication',
-      name: 'Permit Application in the City of Vancouver',
+      name: 'Apply for a City of Vancouver Trade Permit',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a permit in the City of Vancouver',
-          text: 'Bob can apply for a permit in the City of Vancouver and use his Trade Qualifications Card to verify his qualifications.',
+          title: 'Apply for a City of Vancouver Trade Permit',
+          text: 'Bob (that’s you in this demo) can apply for a trade permit from the City of Vancouver and using his Certificate of Qualification. The City requires you to upload your ID and other documentation proving your identity and qualifications. Now you can use your Certificate of Qualification instead.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
-          text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code to get started.',
+          text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
           image: '/public/contractor/useCases/posseOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/lawyer2/connection/lsbc-logo.png' },
+          verifier: { name: 'City of Vancouver', icon: '/public/contractor/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
@@ -148,16 +148,9 @@ export const contractorCustom: CustomCharacter = {
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/lawyer2/connection/lsbc-logo.png',
+                icon: '/public/contractor/icon-technicalsafety.png',
                 name: 'certificate_of_qualification',
-                properties: [
-                  'license_number',
-                  'certification_type',
-                  'family_name',
-                  'given_names',
-                  'fsr_class',
-                  'expiry_date',
-                ],
+                properties: ['license_number', 'certification_type', 'family_name', 'given_names'],
               },
             ],
           },
