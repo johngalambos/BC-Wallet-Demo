@@ -15,9 +15,15 @@ export interface Props {
   currentCharacter: CustomCharacter
   revocationRecord: RevocationRecord[]
   revocationInfo: RevocationInfoItem[]
+  completedUseCaseSlugs: string[]
 }
 
-export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocationInfo, currentCharacter }) => {
+export const RevocationContainer: React.FC<Props> = ({
+  revocationRecord,
+  revocationInfo,
+  currentCharacter,
+  completedUseCaseSlugs,
+}) => {
   const navigate = useNavigate()
 
   const startUseCase = (slug: string, revokeId: string) => {
@@ -34,9 +40,10 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
     const revocationDescription = revocationInfo.find(
       (infoItem) => startCase(infoItem.credentialName) === startCase(revocationKey)
     )
+    const isCompleted = completedUseCaseSlugs.includes(revocationDescription ? revocationDescription.id : '')
     return (
       <RevocationItem
-        slug={revocationDescription ? revocationDescription.id : 'TEST'}
+        slug={revocationDescription ? revocationDescription.id : ''}
         title={revocationDescription?.title}
         description={revocationDescription?.description}
         credentialName={revocationDescription?.credentialName}
@@ -60,7 +67,7 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
             setLoadingRevocations(loadingRevocations.filter((rev) => rev !== item.revocationRegId))
           })
         }}
-        isCompleted={completedRevocations.includes(item.revocationRegId)}
+        isCompleted={isCompleted}
         isLoading={loadingRevocations.includes(item.revocationRegId)}
         start={startUseCase}
       />

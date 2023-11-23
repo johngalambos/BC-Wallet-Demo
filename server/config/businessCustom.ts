@@ -13,7 +13,7 @@ export const businessCustom: CustomCharacter = {
       id: 'revokeDigitalBusinessCard',
       name: "Revoke Jane's Digital Business Card",
       credentialName: 'Digital Business Card',
-      credentialIcon: '/public/student/icon-student.svg',
+      credentialIcon: '/public/business/icon-bcgov.png',
       title: 'BC Business Registry - Revoke Digital Business Card',
       description: "The BC Business Registry needs to revoke Jane's digital Business Card. Let's see how that works.",
       screens: [

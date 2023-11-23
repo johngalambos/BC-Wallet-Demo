@@ -205,6 +205,7 @@ export const Section: React.FC<Props> = ({
     if (step.screenId.startsWith('REVOKE')) {
       const entity = {
         name: currentCharacter?.revocationInfo?.find((item) => item.id === slug)?.credentialName ?? '',
+        icon: currentCharacter?.revocationInfo?.find((item) => item.id === slug)?.credentialIcon ?? '',
       }
       return (
         <StartRevokeContainer

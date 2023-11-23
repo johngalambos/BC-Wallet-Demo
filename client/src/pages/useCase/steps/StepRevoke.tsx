@@ -36,7 +36,7 @@ export const StepRevoke: React.FC<Props> = ({ step, revoke }) => {
     <motion.div variants={fadeX} initial="hidden" animate="show" exit="exit" className="flex flex-col h-full">
       <StepInfo title={step.title} description={step.text} />
       <div className="flex flex-col items-center justify-between">
-        <div className="flex bg-bcgov-black rounded-lg p-2">
+        <div className="flex bg-bcgov-white dark:bg-bcgov-black rounded-lg p-2">
           <Button onClick={findAndRevoke} text={'REVOKE'} disabled={completed}></Button>
           <StateIndicator completed={completed} />
         </div>

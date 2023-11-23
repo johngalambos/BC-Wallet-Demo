@@ -93,6 +93,7 @@ export const DashboardPage: React.FC = () => {
                   currentCharacter={currentCharacter}
                   revocationInfo={currentCharacter.revocationInfo}
                   revocationRecord={revokableCredentials}
+                  completedUseCaseSlugs={completedUseCaseSlugs}
                 />
               )}
             </div>
