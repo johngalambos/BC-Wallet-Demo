@@ -46,7 +46,7 @@ export const RevocationItem: React.FC<Props> = ({
         </h1>
         <div className="flex h-32 mt-2">
           {description && (
-            <motion.div style={{ overflowY: 'scroll' }} className="lg:max-w-[50%]">
+            <motion.div className="lg:max-w-[50%]">
               {description.split(/\n/).map((line, i) => (
                 <React.Fragment key={i}>
                   {line}
