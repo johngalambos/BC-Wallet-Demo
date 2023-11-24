@@ -223,13 +223,26 @@ export const Section: React.FC<Props> = ({
       return (
         <>
           <div className="flex flex-col lg:flex-row w-full h-full">
-            <SideView
-              key={'sideView'}
-              steps={section}
-              currentStep={step.screenId}
-              entity={verifier}
-              showLeaveModal={showLeaveModal}
-            />
+            {step.screenId.startsWith('BUTTON') ? (
+              <SideView
+                key={'sideView'}
+                steps={section}
+                currentStep={step.screenId}
+                entity={{
+                  name: currentCharacter?.revocationInfo?.find((item) => item.id === slug)?.credentialName ?? '',
+                  icon: currentCharacter?.revocationInfo?.find((item) => item.id === slug)?.credentialIcon ?? '',
+                }}
+                showLeaveModal={showLeaveModal}
+              />
+            ) : (
+              <SideView
+                key={'sideView'}
+                steps={section}
+                currentStep={step.screenId}
+                entity={verifier}
+                showLeaveModal={showLeaveModal}
+              />
+            )}
             <motion.div
               key={'mainContentDiv'}
               variants={fadeExit}
