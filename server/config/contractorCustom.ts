@@ -82,7 +82,7 @@ export const contractorCustom: CustomCharacter = {
       credentials: [
         {
           name: 'certificate_of_qualification',
-          version: '1.0',
+          version: '1.0.0',
           icon: '/public/contractor/icon-technicalsafety.png',
           attributes: [
             {
