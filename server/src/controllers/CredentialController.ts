@@ -55,7 +55,15 @@ export class CredentialController {
       ).data
       cred_def_id = resp.sent.credential_definition_id
     } else {
-      cred_def_id = credDefs.credential_definition_ids[0]
+      // make sure the tag matches
+      cred_def_id = credDefs.credential_definition_ids.filter((cdi: string) => {
+        const components = cdi.split(':')
+        const tag = components[components.length - 1]
+        if (tag === credential.name) {
+          return true
+        }
+        return false
+      })[0]
     }
     return cred_def_id
   }
