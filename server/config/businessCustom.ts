@@ -114,7 +114,7 @@ export const businessCustom: CustomCharacter = {
           attributes: [
             {
               name: 'business_name',
-              value: 'ABC Company',
+              value: 'ACME Company',
             },
             {
               name: 'business_type',
