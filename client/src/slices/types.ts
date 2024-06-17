@@ -63,6 +63,7 @@ export interface UseCaseScreen {
   image?: string
   verifier?: { name: string; icon?: string }
   requestOptions?: CustomRequestOptions
+  issueCredentials?: CredentialData[]
 }
 
 export interface CustomUseCase {
@@ -115,6 +116,7 @@ export interface CredentialData {
   credentialDefinitionId: string
   properties?: { name: string }[]
   attributes?: Attribute[]
+  version?: string
 }
 
 export interface Attribute {

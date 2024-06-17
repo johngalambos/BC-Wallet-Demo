@@ -13,10 +13,10 @@ export interface Props {
   title: string
   data: CredentialData
   credential: any
+  credentialIssued: boolean
 }
 
-export const Credential: React.FC<Props> = ({ title, credential, data }) => {
-  const credentialIssued = isCredIssued(credential.state)
+export const Credential: React.FC<Props> = ({ title, credential, data, credentialIssued }) => {
   return (
     <motion.div
       variants={fadeX}

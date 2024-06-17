@@ -24,6 +24,7 @@ import { EndContainer } from './components/EndContainer'
 import { StartContainer } from './components/StartContainer'
 import { StartRevokeContainer } from './components/StartRevokeContainer'
 import { StepConnection } from './steps/StepConnection'
+import { StepCredential } from './steps/StepCredential'
 import { StepEnd } from './steps/StepEnd'
 import { StepInformation } from './steps/StepInformation'
 import { StepProof } from './steps/StepProof'
@@ -145,9 +146,9 @@ export const Section: React.FC<Props> = ({
 
     if (step?.screenId.startsWith('CREDENTIAL')) {
       if (credentialsReceived) {
-        setIsForwardDisabled(false)
-      } else {
         setIsForwardDisabled(true)
+      } else {
+        setIsForwardDisabled(false)
       }
     }
 
@@ -261,16 +262,6 @@ export const Section: React.FC<Props> = ({
                 {step.screenId.startsWith('CONNECTION') && (
                   <StepConnection newConnection={true} key={step.screenId} step={step} connection={connection} />
                 )}
-                {/* {step.screenId.startsWith("CREDENTIAL") && connection.id && section.issueCredentials && (
-                  <StepCredential
-                    key={step.screenId}
-                    step={step}
-                    connectionId={connection.id}
-                    issueCredentials={section.issueCredentials}
-                    credentials={credentials}
-                    proof={proof}
-                  />
-                )} */}
                 {step.screenId.startsWith('PROOF') &&
                   !step.screenId.startsWith('PROOF_OOB') &&
                   step.requestOptions &&
@@ -293,6 +284,16 @@ export const Section: React.FC<Props> = ({
                     step={step}
                     requestedCredentials={step.requestOptions?.requestedCredentials}
                     entityName={verifier.name}
+                  />
+                )}
+                {step.screenId.startsWith('CREDENTIAL') && connection.id && step.issueCredentials && (
+                  <StepCredential
+                    key={step.screenId}
+                    step={step}
+                    connectionId={connection.id}
+                    issueCredentials={step.issueCredentials}
+                    credentials={credentials}
+                    proof={proof}
                   />
                 )}
                 {step.screenId.startsWith('STEP_END') && <StepEnd key={step.screenId} step={step} />}

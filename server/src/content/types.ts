@@ -38,6 +38,7 @@ export interface UseCaseScreen {
   image?: string
   verifier?: { name: string; icon?: string }
   requestOptions?: CustomRequestOptions
+  issueCredentials?: CredentialData[]
 }
 
 export interface CustomUseCase {
@@ -87,6 +88,7 @@ export interface CredentialData {
   id: string
   name: string
   icon: string
+  version: string
   credentialDefinition?: string
   attributes: Attribute[]
   connectionId: string
