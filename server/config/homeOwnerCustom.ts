@@ -4,10 +4,10 @@ import { getDateInt } from '../src/utils/dateint'
 
 export const homeOwnerCustom: CustomCharacter = {
   name: 'Sally',
-  type: 'Home Owner',
+  type: 'Homeowner',
   image: '/public/contractor/contractor.svg',
   description:
-    'Sally is a contractor. To work on a project she needs to verify her qualifications issued by Technical Safety B.C.',
+    'Sally is a homeowner. She wants to publish a listing on AirBnB for her space. To do this, she will need to verify her ownership.',
   // revocationInfo: [
   //   {
   //     credentialName: 'Trade Qualifications Card',
@@ -187,20 +187,32 @@ export const homeOwnerCustom: CustomCharacter = {
             {
               id: '',
               icon: '/public/contractor/icon-technicalsafety.png',
-              name: 'HomeownerCred1',
-              version: '1.0.1',
+              name: 'PropertyHolderCredential',
+              version: '1.0.0',
               attributes: [
                 {
-                  name: 'postal_code',
-                  value: 'V6B2B5',
+                  name: 'title',
+                  value: 'N34500A',
+                },
+                {
+                  name: 'registration_date',
+                  value: `${getDateInt(-19)}`,
+                },
+                {
+                  name: 'family_name',
+                  value: 'Builder',
                 },
                 {
                   name: 'given_names',
                   value: 'Sally',
                 },
                 {
-                  name: 'family_name',
-                  value: 'Builder',
+                  name: 'taxation_authority',
+                  value: 'City of Vancouver',
+                },
+                {
+                  name: 'postal_code',
+                  value: 'V6B2B5',
                 },
                 {
                   name: 'locality',
@@ -217,6 +229,22 @@ export const homeOwnerCustom: CustomCharacter = {
                 {
                   name: 'country',
                   value: 'Canada',
+                },
+                {
+                  name: 'parcel_id',
+                  value: '0123456789',
+                },
+                {
+                  name: 'short_legal_description',
+                  value: 'S/1530///A',
+                },
+                {
+                  name: 'description_of_land',
+                  value: 'Some text here for description of land',
+                },
+                {
+                  name: 'expiry_date',
+                  value: `${getDateInt(1)}`,
                 },
               ],
               connectionId: '',
@@ -259,8 +287,19 @@ export const homeOwnerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/contractor/icon-technicalsafety.png',
-                name: 'HomeownerCred1',
-                properties: ['given_names', 'family_name', 'expiry_date_dateint', 'street_address', 'postal_code'],
+                name: 'PropertyHolderCredential',
+                properties: [
+                  'title',
+                  'given_names',
+                  'family_name',
+                  'expiry_date',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                  'parcel_id',
+                ],
               },
             ],
           },
@@ -313,6 +352,181 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'STEP_END',
           title: "You're done!",
           text: 'You’ve proved to the City of Vancouver that you’re a homeowner. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
+          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+        },
+      ],
+    },
+    {
+      type: 'useCase',
+      id: 'STRDiBLCredential',
+      name: 'Apply for a STR DiBL Credential',
+      screens: [
+        {
+          screenId: 'START',
+          title: 'Apply for a STR DiBL Credential',
+          text: 'Sally (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using her Homeowner Credential and Digital Letter of Authorization.',
+          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+        },
+        {
+          screenId: 'CONNECTION',
+          title: 'Start proving your qualifications',
+          text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/contractor/useCases/posseOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/contractor/icon-cov.png' },
+        },
+        {
+          screenId: 'PROOF',
+          title: 'Confirm the information to send',
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
+          requestOptions: {
+            title: 'City of Vancouver Request',
+            text: 'City of Vancouver would like some of your personal information.',
+            requestedCredentials: [
+              {
+                icon: '/public/contractor/icon-technicalsafety.png',
+                name: 'PropertyHolderCredential',
+                properties: [
+                  'title',
+                  'given_names',
+                  'family_name',
+                  'expiry_date',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                  'parcel_id',
+                ],
+              },
+              {
+                icon: '/public/contractor/icon-technicalsafety.png',
+                name: 'DigitalLetterOfAuthorization',
+                properties: [
+                  'given_names',
+                  'family_name',
+                  'street_address',
+                  'locality',
+                  'region',
+                  'postal_code',
+                  'country',
+                ],
+              },
+            ],
+          },
+        },
+        {
+          screenId: 'CREDENTIAL',
+          title: 'Receive credential',
+          text: 'Check your phone. City of Vancouver has provided you with the STR DiBL Credential.',
+          issueCredentials: [
+            {
+              id: '',
+              icon: '/public/contractor/icon-technicalsafety.png',
+              name: 'STR_DiBL_Credential',
+              version: '1.0.0',
+              attributes: [
+                {
+                  name: 'license_number',
+                  value: '1234567890',
+                },
+                {
+                  name: 'family_name',
+                  value: 'Builder',
+                },
+                {
+                  name: 'given_names',
+                  value: 'Sally',
+                },
+                {
+                  name: 'own_rent',
+                  value: 'Own',
+                },
+                {
+                  name: 'street_address',
+                  value: '814 Richards St',
+                },
+                {
+                  name: 'country',
+                  value: 'Canada',
+                },
+                {
+                  name: 'locality',
+                  value: 'BC',
+                },
+                {
+                  name: 'region',
+                  value: 'Vancouver',
+                },
+                {
+                  name: 'postal_code',
+                  value: 'V6B2B5',
+                },
+                {
+                  name: 'expiry_date',
+                  value: `${getDateInt(1)}`,
+                },
+              ],
+              connectionId: '',
+            },
+          ],
+        },
+        {
+          screenId: 'STEP_END',
+          title: "You're done!",
+          text: 'You’ve received the STR DiBL Credential. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+        },
+      ],
+    },
+    {
+      type: 'useCase',
+      id: 'AirBnB',
+      name: 'Publish listing on AirBnB',
+      screens: [
+        {
+          screenId: 'START',
+          title: 'Post listing on AirBnB',
+          text: 'Sally can use her STR DiBL Credential from the City of Vancouver to fill out information on AirBnB to post a listing for her space.',
+          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+        },
+        {
+          screenId: 'CONNECTION',
+          title: 'Start proving your qualifications',
+          text: 'AirBnB offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/contractor/useCases/posseOverlay.png',
+          verifier: { name: 'AirBnB', icon: '/public/contractor/icon-cov.png' },
+        },
+        {
+          screenId: 'PROOF',
+          title: 'Confirm the information to send',
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. AirBnB is requesting that you prove only what is needed.",
+          requestOptions: {
+            title: 'AirBnB Request',
+            text: 'AirBnB would like some of your personal information.',
+            requestedCredentials: [
+              {
+                icon: '/public/contractor/icon-technicalsafety.png',
+                name: 'STR_DiBL_Credential',
+                properties: [
+                  'license_number',
+                  'given_names',
+                  'family_name',
+                  'expiry_date',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                  'own_rent',
+                ],
+              },
+            ],
+          },
+        },
+        {
+          screenId: 'STEP_END',
+          title: "You're done!",
+          text: 'AirBnB has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that AirBnB could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
