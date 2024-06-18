@@ -72,7 +72,7 @@ export const StepCredential: React.FC<Props> = ({ step, connectionId, issueCrede
   }
 
   useEffect(() => {
-    if (credentials.length === 0) issueCreds()
+    issueCreds()
   }, [])
 
   useInterval(
@@ -120,7 +120,7 @@ export const StepCredential: React.FC<Props> = ({ step, connectionId, issueCrede
       <StepInfo title={step.title} description={step.text} />
       <div className="flex flex-1-1 m-auto">
         <motion.div className={`flex flex-1-1 flex-col m-auto`} variants={fade} animate="show" exit="exit">
-          {credentials.length <= (issueCredentials?.length ?? 0) ? (
+          {issueCredentials?.length ? (
             <>
               <AnimatePresence exitBeforeEnter>{renderCredentials}</AnimatePresence>
             </>

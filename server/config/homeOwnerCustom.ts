@@ -53,7 +53,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Sally',
-      text: 'Sally is a contractor. To help verify her credentials quicker, Technical Safety B.C. is going to offer Sally a Trade Qualifications Card to put in her BC Wallet.',
+      text: 'Sally is a homeowner. She wants to publish a listing on AirBnB for her space. To do this, she will need to verify her ownership.',
     },
     {
       screenId: 'SETUP_START',
