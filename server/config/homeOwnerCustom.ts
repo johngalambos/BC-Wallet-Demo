@@ -5,7 +5,7 @@ import { getDateInt } from '../src/utils/dateint'
 export const homeOwnerCustom: CustomCharacter = {
   name: 'Sally',
   type: 'Homeowner',
-  image: '/public/contractor/contractor.svg',
+  image: '/public/homeowner/homeowner.svg',
   description:
     'Sally is a homeowner. She wants to publish a listing on AirBnB for her space. To do this, she will need to verify her ownership.',
   // revocationInfo: [
@@ -153,8 +153,8 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'LTSA offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/contractor/useCases/posseOverlay.png',
-          verifier: { name: 'LTSA', icon: '/public/contractor/icon-cov.png' },
+          image: '/public/homeowner/useCases/posseOverlay.png',
+          verifier: { name: 'LTSA', icon: '/public/homeowner/icon-ltsa.svg' },
         },
         {
           screenId: 'PROOF',
@@ -165,7 +165,7 @@ export const homeOwnerCustom: CustomCharacter = {
             text: 'LTSA would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/contractor/icon-technicalsafety.png',
+                icon: '/public/lawyer2/connection/bc-logo.png',
                 name: 'Person',
                 properties: [
                   'given_names',
@@ -186,7 +186,7 @@ export const homeOwnerCustom: CustomCharacter = {
           issueCredentials: [
             {
               id: '',
-              icon: '/public/contractor/icon-technicalsafety.png',
+              icon: '/public/homeowner/icon-ltsa.svg',
               name: 'PropertyHolderCredential',
               version: '1.0.0',
               attributes: [
@@ -274,8 +274,8 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/contractor/useCases/posseOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/contractor/icon-cov.png' },
+          image: '/public/homeowner/useCases/posseOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
@@ -286,7 +286,7 @@ export const homeOwnerCustom: CustomCharacter = {
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/contractor/icon-technicalsafety.png',
+                icon: '/public/homeowner/icon-ltsa.svg',
                 name: 'PropertyHolderCredential',
                 properties: [
                   'title',
@@ -311,7 +311,7 @@ export const homeOwnerCustom: CustomCharacter = {
           issueCredentials: [
             {
               id: '',
-              icon: '/public/contractor/icon-technicalsafety.png',
+              icon: '/public/homeowner/icon-cov.png',
               name: 'DigitalLetterOfAuthorization',
               version: '1.0.0',
               attributes: [
@@ -371,8 +371,8 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/contractor/useCases/posseOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/contractor/icon-cov.png' },
+          image: '/public/homeowner/useCases/posseOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
@@ -383,7 +383,7 @@ export const homeOwnerCustom: CustomCharacter = {
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/contractor/icon-technicalsafety.png',
+                icon: '/public/homeowner/icon-ltsa.svg',
                 name: 'PropertyHolderCredential',
                 properties: [
                   'title',
@@ -399,7 +399,7 @@ export const homeOwnerCustom: CustomCharacter = {
                 ],
               },
               {
-                icon: '/public/contractor/icon-technicalsafety.png',
+                icon: '/public/homeowner/icon-cov.png',
                 name: 'DigitalLetterOfAuthorization',
                 properties: [
                   'given_names',
@@ -421,7 +421,7 @@ export const homeOwnerCustom: CustomCharacter = {
           issueCredentials: [
             {
               id: '',
-              icon: '/public/contractor/icon-technicalsafety.png',
+              icon: '/public/homeowner/icon-cov.png',
               name: 'STR_DiBL_Credential',
               version: '1.0.0',
               attributes: [
@@ -493,8 +493,8 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'AirBnB offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/contractor/useCases/posseOverlay.png',
-          verifier: { name: 'AirBnB', icon: '/public/contractor/icon-cov.png' },
+          image: '/public/homeowner/useCases/posseOverlay.png',
+          verifier: { name: 'AirBnB', icon: '/public/homeowner/icon-airbnb.png' },
         },
         {
           screenId: 'PROOF',
@@ -505,7 +505,7 @@ export const homeOwnerCustom: CustomCharacter = {
             text: 'AirBnB would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/contractor/icon-technicalsafety.png',
+                icon: '/public/homeowner/icon-cov.png',
                 name: 'STR_DiBL_Credential',
                 properties: [
                   'license_number',

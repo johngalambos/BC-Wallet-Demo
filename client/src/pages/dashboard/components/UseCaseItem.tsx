@@ -27,10 +27,25 @@ const getCredIcon = (currChar: CustomCharacter, credName: string) => {
       screen.credentials.forEach((cred) => {
         if (cred.name === credName) {
           icon = cred.icon
+          return icon
         }
       })
     }
   })
+  if (icon === '') {
+    currChar.useCases.forEach((useCase) => {
+      useCase.screens.forEach((screen) => {
+        if (screen.requestOptions?.requestedCredentials) {
+          screen.requestOptions?.requestedCredentials.forEach((cred) => {
+            if (cred.name === credName) {
+              icon = cred.icon ?? ''
+              return icon
+            }
+          })
+        }
+      })
+    })
+  }
   return icon
 }
 
