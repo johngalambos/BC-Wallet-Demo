@@ -7,7 +7,7 @@ export const homeOwnerCustom: CustomCharacter = {
   type: 'Homeowner',
   image: '/public/homeowner/homeowner.svg',
   description:
-    'Sally is a homeowner. She wants to publish a listing on AirBnB for her space. To do this, she will need to verify her ownership.',
+    'Sally is a homeowner. She wants to publish a listing on Airbnb for her space. To do this, she will need to verify her ownership.',
   // revocationInfo: [
   //   {
   //     credentialName: 'Trade Qualifications Card',
@@ -53,7 +53,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Sally',
-      text: 'Sally is a homeowner. She wants to publish a listing on AirBnB for her space. To do this, she will need to verify her ownership.',
+      text: 'Sally is a homeowner. She wants to publish a listing on Airbnb for her space. To do this, she will need to verify her ownership.',
     },
     {
       screenId: 'SETUP_START',
@@ -153,7 +153,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'LTSA offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/posseOverlay.png',
+          image: '/public/homeowner/useCases/ltsaOverlay.png',
           verifier: { name: 'LTSA', icon: '/public/homeowner/icon-ltsa.svg' },
         },
         {
@@ -274,7 +274,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/posseOverlay.png',
+          image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
@@ -285,6 +285,18 @@ export const homeOwnerCustom: CustomCharacter = {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
+              {
+                icon: '/public/lawyer2/connection/bc-logo.png',
+                name: 'Person',
+                properties: [
+                  'given_names',
+                  'family_name',
+                  'birthdate_dateint',
+                  'expiry_date_dateint',
+                  'street_address',
+                  'postal_code',
+                ],
+              },
               {
                 icon: '/public/homeowner/icon-ltsa.svg',
                 name: 'PropertyHolderCredential',
@@ -371,7 +383,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
           text: 'City of Vancouver offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/posseOverlay.png',
+          image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
@@ -480,29 +492,29 @@ export const homeOwnerCustom: CustomCharacter = {
     },
     {
       type: 'useCase',
-      id: 'AirBnB',
-      name: 'Publish listing on AirBnB',
+      id: 'Airbnb',
+      name: 'Publish listing on Airbnb',
       screens: [
         {
           screenId: 'START',
-          title: 'Post listing on AirBnB',
-          text: 'Sally can use her STR DiBL Credential from the City of Vancouver to fill out information on AirBnB to post a listing for her space.',
+          title: 'Post listing on Airbnb',
+          text: 'Sally can use her STR DiBL Credential from the City of Vancouver to fill out information on Airbnb to post a listing for her space.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Start proving your qualifications',
-          text: 'AirBnB offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/posseOverlay.png',
-          verifier: { name: 'AirBnB', icon: '/public/homeowner/icon-airbnb.png' },
+          text: 'Airbnb offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/homeowner/useCases/airbnbOverlay.png',
+          verifier: { name: 'Airbnb', icon: '/public/homeowner/icon-airbnb.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. AirBnB is requesting that you prove only what is needed.",
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. Airbnb is requesting that you prove only what is needed.",
           requestOptions: {
-            title: 'AirBnB Request',
-            text: 'AirBnB would like some of your personal information.',
+            title: 'Airbnb Request',
+            text: 'Airbnb would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/homeowner/icon-cov.png',
@@ -526,7 +538,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'AirBnB has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that AirBnB could easily and automatically trust.',
+          text: 'Airbnb has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that Airbnb could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
