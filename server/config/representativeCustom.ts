@@ -87,7 +87,7 @@ export const representativeCustom: CustomCharacter = {
     {
       screenId: 'SETUP_START',
       title: "Let's get started!",
-      text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
+      text: 'What is the BC Wallet? \nThe BC Wallet is an app created by the Government of British Columbia that allows users to store and use digital credentials on their smartphones. These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
       image: '/public/common/getStarted.svg',
     },
     {
@@ -289,7 +289,7 @@ export const representativeCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve proved to the City of Vancouver that you’re a homeowner. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
+          text: 'You’ve provided the City of Vancouver with the necessary information. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
