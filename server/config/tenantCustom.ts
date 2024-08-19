@@ -2,45 +2,45 @@ import type { CustomCharacter } from '../src/content/types'
 
 import { getDateInt } from '../src/utils/dateint'
 
-export const representativeCustom: CustomCharacter = {
+export const tenantCustom: CustomCharacter = {
   name: 'James',
-  type: 'Property Manager',
+  type: 'Tenant',
   image: '/public/representative/representative.svg',
   description:
-    'James is a property manager. He wants to publish a listing on Airbnb for his client Sally. To do this, he will need to get authorization.',
+    'James is a tenant. He wants to publish a listing on Airbnb for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
   revocationInfo: [
     {
       type: 'revoke',
       id: 'revokeDigitalBusinessCard',
-      name: "Revoke James' Digital Letter of Authorization",
-      credentialName: 'Digital Letter of Authorization',
+      name: "Revoke James' Strata Letter of Authorization",
+      credentialName: 'Strata Letter of Authorization',
       credentialIcon: '/public/homeowner/icon-cov.png',
-      title: 'Revoke Digital Letter of Authorization',
+      title: 'Revoke Strata Letter of Authorization',
       description:
-        "When James no longer manages Sally's property, City of Vancouver needs to revoke James' Digital Letter of Authorization. Let's see how that works.",
+        "When James is no longer Sally's tenant, the strata needs to revoke James' Strata Letter of Authorization. Let's see how that works.",
       screens: [
         {
           screenId: 'REVOKE',
-          title: 'Revoke Digital Letter of Authorization',
-          text: 'City of Vancouver will revoke James’s Digital Letter of Authorization as he no longer manages Sally’s property.',
+          title: 'Revoke Strata Letter of Authorization',
+          text: 'The strata will revoke James’s Strata Letter of Authorization as he no longer Sally’s tenant.',
           image: '/public/business/useCases/businessRevokeStart.svg',
         },
         {
           screenId: 'BUTTON',
-          title: 'City of Vancouver - Revoke the Digital Letter of Authorization',
-          text: 'City of Vancouver can revoke the credentials it issued. Let’s pretend we’re the City of Vancouver and revoke James’s Digital Letter of Authorization.',
+          title: 'Strata - Revoke the Strata Letter of Authorization',
+          text: 'The strata can revoke the credentials it issued. Let’s pretend we’re the strata and revoke James’s Strata Letter of Authorization.',
           image: '/public/business/useCases/businessRevoke.svg',
         },
         {
           screenId: 'INFO',
           title: 'James - Remove the revoked crediential from BC Wallet',
-          text: 'James’s Digital Letter of Authorization has been revoked by the City of Vancouver. He will see a red (!) on his Digital Letter of Authorization. James can remove it from his BC Wallet. Organisations that request a Digital Letter of Authorization can identify that his has been revoked and choose not to accept it, even if he doesn’t remove it from his BC Wallet.',
+          text: 'James’s Strata Letter of Authorization has been revoked by the strata. He will see a red (!) on his Strata Letter of Authorization. James can remove it from his BC Wallet. Organisations that request a Strata Letter of Authorization can identify that his has been revoked and choose not to accept it, even if he doesn’t remove it from his BC Wallet.',
           image: '/public/business/useCases/businessRemoveRevoke.png',
         },
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'City of Vancouver has revoked James’s Digital Letter of Authorization. James was notified and can remove it from his BC Wallet. If he manages another property, City of Vancouver can issue him a Digital Letter of Authorization for that property. It only took a few seconds and organisations that request a Digital Letter of Authorization can trust that the information it carries is up to date.',
+          text: 'The strata has revoked James’s Strata Letter of Authorization. James was notified and can remove it from his BC Wallet. If he rents another strata property, the strata there can issue him a Strata Letter of Authorization. It only took a few seconds and organisations that request a Strata Letter of Authorization can trust that the information it carries is up to date.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -82,7 +82,7 @@ export const representativeCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet James',
-      text: 'James is a property manager. He wants to publish a listing on Airbnb for his client Sally. To do this, he will need to get authorization.',
+      text: 'James is a tenant. He wants to publish a listing on Airbnb for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
     },
     {
       screenId: 'SETUP_START',
@@ -129,7 +129,7 @@ export const representativeCustom: CustomCharacter = {
             },
             {
               name: 'family_name',
-              value: 'Property Manager',
+              value: 'tenant',
             },
             {
               name: 'locality',
@@ -170,57 +170,23 @@ export const representativeCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Apply for a Digital Letter of Authorization',
+      name: 'Apply for a Strata Letter of Authorization',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Digital Letter of Authorization',
-          text: "James can apply for a Digital Letter of Authorization from the City of Vancouver and using his Person Credential and Sally's HomeOwner Credential.",
+          title: 'Apply for a Strata Letter of Authorization',
+          text: 'James can apply for a Strata Letter of Authorization from the strata using his Person Credential and his Digital Letter of Authorization.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: "Start providing Sally's credentials",
+          title: 'Start providing your information',
           text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
-          requestOptions: {
-            title: 'City of Vancouver Request',
-            text: 'City of Vancouver would like some of your personal information.',
-            requestedCredentials: [
-              {
-                icon: '/public/homeowner/icon-ltsa.svg',
-                name: 'PropertyHolderCredential',
-                properties: [
-                  'title',
-                  'given_names',
-                  'family_name',
-                  'expiry_date',
-                  'street_address',
-                  'region',
-                  'locality',
-                  'country',
-                  'postal_code',
-                  'parcel_id',
-                ],
-              },
-            ],
-          },
-        },
-        {
-          screenId: 'CONNECTION2',
-          title: "Start providing James' credentials",
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/covOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
-        },
-        {
-          screenId: 'PROOF2',
           title: 'Confirm the information to send',
           text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
           requestOptions: {
@@ -239,6 +205,19 @@ export const representativeCustom: CustomCharacter = {
                   'postal_code',
                 ],
               },
+              {
+                icon: '/public/homeowner/icon-cov.png',
+                name: 'DigitalLetterOfAuthorization',
+                properties: [
+                  'given_names',
+                  'family_name',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                ],
+              },
             ],
           },
         },
@@ -250,7 +229,7 @@ export const representativeCustom: CustomCharacter = {
             {
               id: '',
               icon: '/public/homeowner/icon-cov.png',
-              name: 'DigitalLetterOfAuthorization',
+              name: 'StrataLetterOfAuthorization',
               version: '1.0.0',
               attributes: [
                 {
@@ -263,7 +242,7 @@ export const representativeCustom: CustomCharacter = {
                 },
                 {
                   name: 'family_name',
-                  value: 'Property Manager',
+                  value: 'tenant',
                 },
                 {
                   name: 'locality',
@@ -302,7 +281,7 @@ export const representativeCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Apply for a STR DiBL Credential',
-          text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Homeowner Credential and Digital Letter of Authorization.',
+          text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Strata Letter of Authorization.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -322,7 +301,7 @@ export const representativeCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/homeowner/icon-cov.png',
-                name: 'DigitalLetterOfAuthorization',
+                name: 'StrataLetterOfAuthorization',
                 properties: [
                   'given_names',
                   'family_name',

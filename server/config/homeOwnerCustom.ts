@@ -187,8 +187,8 @@ export const homeOwnerCustom: CustomCharacter = {
             {
               id: '',
               icon: '/public/homeowner/icon-ltsa.svg',
-              name: 'PropertyHolderCredential',
-              version: '1.0.0',
+              name: 'homeowner_credential',
+              version: '1.1.0',
               attributes: [
                 {
                   name: 'title',
@@ -261,6 +261,224 @@ export const homeOwnerCustom: CustomCharacter = {
     },
     {
       type: 'useCase',
+      id: 'LTRDiBLCredential',
+      name: 'Apply for a Digital Long Term Rental (LTR) Business License',
+      screens: [
+        {
+          screenId: 'START',
+          title: 'Apply for a Digital Long Term Rental (LTR) Business License',
+          text: 'Sally (that’s you in this demo) can apply for a Digital Long Term Rental (LTR) Business License from City of Vancouver and using her Homeowner Credential.',
+          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+        },
+        {
+          screenId: 'CONNECTION',
+          title: 'Start providing your credentials',
+          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/homeowner/useCases/covOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
+        },
+        {
+          screenId: 'PROOF',
+          title: 'Confirm the information to send',
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
+          requestOptions: {
+            title: 'City of Vancouver Request',
+            text: 'City of Vancouver would like some of your personal information.',
+            requestedCredentials: [
+              {
+                icon: '/public/homeowner/icon-ltsa.svg',
+                name: 'homeowner_credential',
+                properties: [
+                  'title',
+                  'given_names',
+                  'family_name',
+                  'expiry_date',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                  'parcel_id',
+                ],
+              },
+            ],
+          },
+        },
+        {
+          screenId: 'CREDENTIAL',
+          title: 'Receive credential',
+          text: 'Check your phone. City of Vancouver has provided you with the Digital Long Term Rental (LTR) Business License',
+          issueCredentials: [
+            {
+              id: '',
+              icon: '/public/homeowner/icon-cov.png',
+              name: 'LTR_DiBL_Credential',
+              version: '1.0.0',
+              attributes: [
+                {
+                  name: 'license_number',
+                  value: '1234567890',
+                },
+                {
+                  name: 'family_name',
+                  value: 'Builder',
+                },
+                {
+                  name: 'given_names',
+                  value: 'Sally',
+                },
+                {
+                  name: 'own_rent',
+                  value: 'Own',
+                },
+                {
+                  name: 'street_address',
+                  value: '814 Richards St',
+                },
+                {
+                  name: 'country',
+                  value: 'Canada',
+                },
+                {
+                  name: 'locality',
+                  value: 'BC',
+                },
+                {
+                  name: 'region',
+                  value: 'Vancouver',
+                },
+                {
+                  name: 'postal_code',
+                  value: 'V6B2B5',
+                },
+                {
+                  name: 'expiry_date',
+                  value: `${getDateInt(1)}`,
+                },
+              ],
+              connectionId: '',
+            },
+          ],
+        },
+        {
+          screenId: 'STEP_END',
+          title: "You're done!",
+          text: 'You’ve received the Digital Long Term Rental (LTR) Business License. You can now use this credential to grant authorization to a tenant. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+        },
+      ],
+    },
+    {
+      type: 'useCase',
+      id: 'digitalLetterAuthorization',
+      name: 'Apply for a Digital Letter of Authorization',
+      screens: [
+        {
+          screenId: 'START',
+          title: 'Apply for a Digital Letter of Authorization',
+          text: 'Sally (that’s you in this demo) can apply for a Apply for a Digital Letter of Authorization from City of Vancouver and using her Digital Long Term Rental (LTR) Business License.',
+          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+        },
+        {
+          screenId: 'CONNECTION',
+          title: 'Start providing your credentials',
+          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/homeowner/useCases/covOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
+        },
+        {
+          screenId: 'PROOF',
+          title: 'Confirm the information to send',
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
+          requestOptions: {
+            title: 'City of Vancouver Request',
+            text: 'City of Vancouver would like some of your personal information.',
+            requestedCredentials: [
+              {
+                icon: '/public/homeowner/icon-cov.png',
+                name: 'LTR_DiBL_Credential',
+                properties: [
+                  'license_number',
+                  'given_names',
+                  'family_name',
+                  'expiry_date',
+                  'street_address',
+                  'region',
+                  'locality',
+                  'country',
+                  'postal_code',
+                  'own_rent',
+                ],
+              },
+            ],
+          },
+        },
+        {
+          screenId: 'INFO',
+          title: 'Grant Authroization to a Tenant',
+          text: 'As a homeowner, you can select what authorization to grant to a tenant. You can choose to grant authorization to a tenant to operate a STR, to apply for renovations, or any other authorization you wish to grant.',
+        },
+        {
+          screenId: 'CONNECTION2',
+          title: 'Tenant - Scan to receive credential',
+          text: 'Imagine you are the tenant. City of Vancouver will provide the tenant with the Digital Letter of Authorization. Scan the QR code with your BC Wallet to get started.',
+          image: '/public/homeowner/useCases/covOverlay.png',
+          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
+        },
+        {
+          screenId: 'CREDENTIAL',
+          title: 'Tenant - Receive credential',
+          text: 'Imagine you are the tenant. City of Vancouver has provided the tenant with the Digital Letter of Authorization.',
+          issueCredentials: [
+            {
+              id: '',
+              icon: '/public/homeowner/icon-cov.png',
+              name: 'DigitalLetterOfAuthorization',
+              version: '1.0.0',
+              attributes: [
+                {
+                  name: 'postal_code',
+                  value: 'V6B2B5',
+                },
+                {
+                  name: 'given_names',
+                  value: 'James',
+                },
+                {
+                  name: 'family_name',
+                  value: 'Tenant',
+                },
+                {
+                  name: 'locality',
+                  value: 'BC',
+                },
+                {
+                  name: 'region',
+                  value: 'Vancouver',
+                },
+                {
+                  name: 'street_address',
+                  value: '814 Richards St',
+                },
+                {
+                  name: 'country',
+                  value: 'Canada',
+                },
+              ],
+              connectionId: '',
+            },
+          ],
+        },
+        {
+          screenId: 'STEP_END',
+          title: "You're done!",
+          text: 'Your tenant received the Digital Letter of Authroization. They can now use this credential to apply for anything you (the homeowner) have allowed. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+        },
+      ],
+    },
+    {
+      type: 'useCase',
       id: 'STRDiBLCredential',
       name: 'Apply for a STR DiBL Credential',
       screens: [
@@ -287,7 +505,7 @@ export const homeOwnerCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/homeowner/icon-ltsa.svg',
-                name: 'PropertyHolderCredential',
+                name: 'homeowner_credential',
                 properties: [
                   'title',
                   'given_names',

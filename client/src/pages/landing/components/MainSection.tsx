@@ -41,11 +41,15 @@ export const MainSection: React.FC = () => {
   const renderMobileTitle = (
     <motion.div className="flex-1 dark:text-white text-left text-4xl font-semibold my-8 leading-snug ">
       <div className="overflow-hidden py-1">
-        <motion.h1 variants={landingTitle}>City of Vancouver BC Wallet Showcase</motion.h1>
+        <motion.h1 variants={landingTitle}>
+          City of Vancouver
+          <br />
+          BC Wallet Showcase
+        </motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey">
-          Explore how you can use BC Wallet to access City of Vancouver services in a way that's safe and secure.
+          Explore the use-cases that the City of Vancouver is experimenting with to transform Digital Service Delivery.
         </motion.h2>
       </div>
       <div className="flex flex-col justify-center text-base sxl:text-lg font-normal mt-6 m-auto">
@@ -74,14 +78,18 @@ export const MainSection: React.FC = () => {
   const renderDesktopTitle = (
     <motion.div className="flex-1 text-left text-bcgov-black dark:text-bcgov-white font-semibold text-4xl lg:text-5xl xl:text-6xl m-auto">
       <div className="overflow-hidden py-1 leading-tight">
-        <motion.h1 variants={landingTitle}>City of Vancouver BC Wallet Showcase</motion.h1>
+        <motion.h1 variants={landingTitle}>
+          City of Vancouver
+          <br />
+          BC Wallet Showcase
+        </motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2
           variants={fadeDelay}
           className="text-base lg:text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey"
         >
-          Explore how you can use BC Wallet to access City of Vancouver services in a way that's safe and secure.
+          Explore the use-cases that the City of Vancouver is experimenting with to transform Digital Service Delivery.
         </motion.h2>
       </div>
       <div className="flex flex-row justify-start text-base sxl:text-lg  font-normal mt-6">

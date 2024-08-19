@@ -3,9 +3,7 @@ import type { CustomCharacter } from './types'
 import { businessCustom } from '../../config/businessCustom'
 import { contractorCustom } from '../../config/contractorCustom'
 import { homeOwnerCustom } from '../../config/homeOwnerCustom'
-import { lawyerCustom } from '../../config/lawyerCustom'
-import { representativeCustom } from '../../config/representativeCustom'
-import { studentCustom } from '../../config/studentCustom'
+import { tenantCustom } from '../../config/tenantCustom'
 
 const characters: CustomCharacter[] = [
   // studentCustom,
@@ -13,7 +11,7 @@ const characters: CustomCharacter[] = [
   businessCustom,
   contractorCustom,
   homeOwnerCustom,
-  representativeCustom,
+  tenantCustom,
 ]
 
 export default characters
