@@ -69,9 +69,12 @@ export const StartRevokeContainer: React.FC<Props> = ({ entity, step, characterT
       <div className="flex flex-col p-6 md:p-12 md:pb-6 xl:p-16 xl:pb-8 w-full lg:w-2/3 ">
         <StarterInfoRevoke title={step.title} description={step.text ?? ''} entity={entity} />
 
-        <div className="flex justify-between content-center bg-bcgovgrey dark:bg-bcgov-darkgrey ">
+        <div
+          className="flex justify-between content-center bg-bcgovgrey dark:bg-bcgov-darkgrey "
+          style={{ alignItems: 'center' }}
+        >
           <button onClick={leave}>
-            <FiLogOut className="ml-2 inline h-8 cursor-pointer" />
+            <FiLogOut className="ml-2 inline h-8 cursor-pointer" /> LEAVE
           </button>
           <SmallButton onClick={next} text={'START'} disabled={false} />
         </div>

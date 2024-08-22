@@ -58,8 +58,9 @@ export const SideView: React.FC<Props> = ({ steps, currentStep, entity, showLeav
         onClick={showLeaveModal}
         variants={fadeDelay}
         className="flex p-0 md:p-4 fixed bottom-5 lg:relative"
+        style={{ alignItems: 'center' }}
       >
-        <FiLogOut className="ml-2 inline h-8 cursor-pointer" />
+        <FiLogOut className="ml-2 inline h-8 cursor-pointer" /> LEAVE
       </motion.button>
     </motion.div>
   )

@@ -29,7 +29,7 @@ export const ActionCard: React.FC<Props> = ({ items, title }) => {
               </div>
             )}
             <div className="flex-1 px-4 justify-self-start dark:text-white">
-              <p>{startCase(item.name)}</p>
+              <p>{item.name}</p>
             </div>
           </div>
         )
