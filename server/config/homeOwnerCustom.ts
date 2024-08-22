@@ -262,25 +262,25 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'LTRDiBLCredential',
-      name: 'Apply for a Digital Long Term Rental (LTR) Business License',
+      name: 'Apply for a Long Term Rental (LTR) Business License',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Digital Long Term Rental (LTR) Business License',
-          text: 'Sally (that’s you in this demo) can apply for a Digital Long Term Rental (LTR) Business License from City of Vancouver and using her Homeowner Credential.',
+          title: 'Apply for a Long Term Rental (LTR) Business License',
+          text: "Sally owns a home that she wishes to rent out, and the City of Vancouver (CoV) requires her to obtain a Long Term Rental Business Licence (LTRBL). Sally uses her BC Wallet to fill out the application form; she does this by agreeing to share the information contained in her HomeOwner credential to populate the form fields. \nClick [START] to follow Sally's journey.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your credentials',
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+          title: 'Scan the QR Code to share your Homeowner credential',
+          text: 'After scanning with your BC Wallet app, you will see an invitation to share specific information contained in your Homeowner credential. Feel free to review and select the [SHARE] option.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
+          title: 'Receiving the information from your BC Wallet',
+          text: 'Once you agree to share the information, it will populate the form below. \nClick Next when you are done reviewing the information.',
           requestOptions: {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
@@ -306,8 +306,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'CREDENTIAL',
-          title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided you with the Digital Long Term Rental (LTR) Business License',
+          title: 'Accepting the credential on your Wallet',
+          text: 'The City of Vancouver has successfully verified your application, please check your BC Wallet for a message offering you a digital Long Term Rental BL credential. Please click accept.',
           issueCredentials: [
             {
               id: '',
@@ -363,7 +363,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve received the Digital Long Term Rental (LTR) Business License. You can now use this credential to grant authorization to a tenant. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          text: 'You’ve received the Long Term Rental (LTR) Business License. You can now use this credential to grant authorization to a tenant. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -371,12 +371,12 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Apply for a Digital Letter of Authorization',
+      name: 'Apply for a Letter of Authorization',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Digital Letter of Authorization',
-          text: 'Sally (that’s you in this demo) can apply for a Apply for a Digital Letter of Authorization from City of Vancouver and using her Digital Long Term Rental (LTR) Business License.',
+          title: 'Apply for a Letter of Authorization',
+          text: 'Sally (that’s you in this demo) can apply for a Apply for a Letter of Authorization from City of Vancouver and using her Long Term Rental (LTR) Business License.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -415,20 +415,20 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'INFO',
-          title: 'Grant Authroization to a Tenant',
+          title: 'Grant Authorization to a Tenant',
           text: 'As a homeowner, you can select what authorization to grant to a tenant. You can choose to grant authorization to a tenant to operate a STR, to apply for renovations, or any other authorization you wish to grant.',
         },
         {
           screenId: 'CONNECTION2',
           title: 'Tenant - Scan to receive credential',
-          text: 'Imagine you are the tenant. City of Vancouver will provide the tenant with the Digital Letter of Authorization. Scan the QR code with your BC Wallet to get started.',
+          text: 'Imagine you are the tenant. City of Vancouver will provide the tenant with the Letter of Authorization. Scan the QR code with your BC Wallet to get started.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'CREDENTIAL',
           title: 'Tenant - Receive credential',
-          text: 'Imagine you are the tenant. City of Vancouver has provided the tenant with the Digital Letter of Authorization.',
+          text: 'Imagine you are the tenant. City of Vancouver has provided the tenant with the Letter of Authorization.',
           issueCredentials: [
             {
               id: '',
@@ -472,7 +472,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'Your tenant received the Digital Letter of Authroization. They can now use this credential to apply for anything you (the homeowner) have allowed. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          text: 'Your tenant received the Letter of Authroization. They can now use this credential to apply for anything you (the homeowner) have allowed. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -480,12 +480,12 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'STRDiBLCredential',
-      name: 'Apply for a STR DiBL Credential',
+      name: 'Apply for a Short Term Rental (STR) Business License',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a STR DiBL Credential',
-          text: 'Sally (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using her Homeowner Credential.',
+          title: 'Apply for a Short Term Rental (STR) Business License',
+          text: 'Sally (that’s you in this demo) can apply for a Short Term Rental (STR) Business License from City of Vancouver and using her Homeowner Credential.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -525,7 +525,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'CREDENTIAL',
           title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided you with the STR DiBL Credential.',
+          text: 'Check your phone. City of Vancouver has provided you with the Short Term Rental (STR) Business License.',
           issueCredentials: [
             {
               id: '',
@@ -581,7 +581,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'You’ve received the STR DiBL Credential. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          text: 'You’ve received the Short Term Rental (STR) Business License. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -594,7 +594,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Post listing on Airbnb',
-          text: 'Sally can use her STR DiBL Credential from the City of Vancouver to fill out information on Airbnb to post a listing for her space.',
+          text: 'Sally can use her Short Term Rental (STR) Business License from the City of Vancouver to fill out information on Airbnb to post a listing for her space.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
