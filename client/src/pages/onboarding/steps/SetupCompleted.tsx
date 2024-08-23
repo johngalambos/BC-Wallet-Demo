@@ -6,10 +6,11 @@ import { fadeX } from '../../../FramerAnimations'
 export interface Props {
   title: string
   text: string
+  step?: number
   characterName: string
 }
 
-export const SetupCompleted: React.FC<Props> = ({ title, text, characterName }) => {
+export const SetupCompleted: React.FC<Props> = ({ title, text, step, characterName }) => {
   const lastIndex = title.lastIndexOf(' ')
   const lastWord = <p className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</p>
   const newTitle = title.substring(0, lastIndex)
@@ -18,6 +19,7 @@ export const SetupCompleted: React.FC<Props> = ({ title, text, characterName }) 
     <motion.div className="h-full" variants={fadeX} initial="hidden" animate="show" exit="exit">
       <div className="flex flex-col leading-loose">
         <div className="flex-1 my-4">
+          <h4 className="font-semibold dark:text-white">Onboarding step {step}</h4>
           <h2 className="text-3xl md:text-4xl font-semibold dark:text-white">
             {newTitle}&nbsp;
             {lastWord}

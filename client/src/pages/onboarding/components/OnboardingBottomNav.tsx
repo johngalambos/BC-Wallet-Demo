@@ -30,7 +30,7 @@ export const OnboardingBottomNav: React.FC<Props> = ({
     if (isCompleted) {
       setLabel('FINISH')
     } else if (onboardingStep === 'CHOOSE_WALLET') {
-      setLabel('SKIP')
+      setLabel('NEXT')
     } else {
       setLabel('NEXT')
     }

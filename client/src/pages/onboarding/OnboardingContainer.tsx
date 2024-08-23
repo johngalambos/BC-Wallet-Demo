@@ -118,6 +118,7 @@ export const OnboardingContainer: React.FC<Props> = ({
         credentials: characterContent.credentials,
         issuer_name: characterContent.issuer_name,
         image: characterContent.image,
+        step: characterContent.step,
       }
     }
     return { title: '', text: '' }
@@ -129,7 +130,7 @@ export const OnboardingContainer: React.FC<Props> = ({
   }, [connectionState])
 
   const getComponentToRender = (progress: string) => {
-    const { text, title, credentials, issuer_name } = getCharacterContent(progress)
+    const { text, title, credentials, issuer_name, step } = getCharacterContent(progress)
     if (progress === 'PICK_CHARACTER') {
       return (
         <PickCharacter
@@ -138,12 +139,15 @@ export const OnboardingContainer: React.FC<Props> = ({
           characters={characters}
           title={title}
           text={text}
+          step={step}
         />
       )
     } else if (progress === 'SETUP_START') {
-      return <SetupStart key={progress} title={title} text={text} />
+      return <SetupStart key={progress} title={title} text={text} step={step} />
     } else if (progress === 'CHOOSE_WALLET') {
-      return <ChooseWallet key={progress} title={title} text={text} addOnboardingProgress={nextOnboardingPage} />
+      return (
+        <ChooseWallet key={progress} title={title} text={text} addOnboardingProgress={nextOnboardingPage} step={step} />
+      )
     } else if (progress.startsWith('CONNECT')) {
       return (
         <SetupConnection
@@ -159,6 +163,7 @@ export const OnboardingContainer: React.FC<Props> = ({
           title={title}
           text={text}
           backgroundImage={currentCharacter?.image}
+          step={step}
         />
       )
     } else if (progress.startsWith('ACCEPT') && credentials && connectionId) {
@@ -170,14 +175,21 @@ export const OnboardingContainer: React.FC<Props> = ({
           currentCharacter={currentCharacter}
           title={title}
           text={text}
+          step={step}
         />
       )
     } else if (progress === 'SETUP_COMPLETED') {
       return (
-        <SetupCompleted key={progress} title={title} text={text} characterName={currentCharacter?.name ?? 'Unknown'} />
+        <SetupCompleted
+          key={progress}
+          title={title}
+          text={text}
+          step={step}
+          characterName={currentCharacter?.name ?? 'Unknown'}
+        />
       )
     } else {
-      return <BasicSlide title={title} text={text} />
+      return <BasicSlide title={title} text={text} step={step} />
     }
   }
 

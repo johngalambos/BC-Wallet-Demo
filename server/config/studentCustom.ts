@@ -54,7 +54,7 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'SETUP_START',
-      title: "Let's get started!",
+      title: 'Learn about digital credentials',
       text: 'BC Wallet is a new app for storing and using credentials on your smartphone. Credentials are things like IDs, licences and diplomas. \nUsing your BC Wallet is fast and simple. In the future it can be used online and in person. You approve every use, and share only what is needed. \nIn this demo, you will use two credentials to prove who you are and access court materials online instead of in-person.',
       image: '/public/common/getStarted.svg',
     },
@@ -100,7 +100,7 @@ export const studentCustom: CustomCharacter = {
     },
     {
       screenId: 'SETUP_COMPLETED',
-      title: "You're all set!",
+      title: 'Recap and next steps',
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/common/onboarding-completed-light.svg',
     },

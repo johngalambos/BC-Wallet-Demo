@@ -54,31 +54,36 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Sally',
       text: 'Sally is a homeowner. She wants to publish a listing on Airbnb for her space. To do this, she will need to verify her ownership.',
+      step: 1,
     },
     {
       screenId: 'SETUP_START',
-      title: "Let's get started!",
+      title: 'Learn about digital credentials',
       text: 'What is the BC Wallet? \nThe BC Wallet is an app created by the Government of British Columbia that allows users to store and use digital credentials on their smartphones. These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
       image: '/public/common/getStarted.svg',
+      step: 2,
     },
     {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
       text: 'First, install the BC Wallet app onto your smartphone.',
       image: '/public/common/app-store-screenshots.png',
+      step: 3,
     },
     {
       screenId: 'CONNECT_PERSON',
-      title: 'Get Person credential',
+      title: 'Get a person credential',
       text: 'Sally gets her Person credential from the BC Services Card app. she starts the process within BC Wallet. For this demo you will scan this QR code to receive the credential offer.',
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
+      step: 4,
     },
     {
       screenId: 'ACCEPT_PERSON',
-      title: 'Accept your Person credential',
+      title: 'Add the credential to your wallet',
       text: 'Check your phone. You’ve received a credential offer from Service BC in your BC Wallet. You can use this credential to prove who you are online.',
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
+      step: 4,
       credentials: [
         {
           name: 'Person',
@@ -132,9 +137,10 @@ export const homeOwnerCustom: CustomCharacter = {
     },
     {
       screenId: 'SETUP_COMPLETED',
-      title: "You're all set!",
+      title: 'Recap and next steps',
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/common/onboarding-completed-light.svg',
+      step: 5,
     },
   ],
   useCases: [

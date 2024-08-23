@@ -19,10 +19,11 @@ const QRCode = require('qrcode.react')
 export interface Props {
   title: string
   text: string
+  step?: number
   addOnboardingProgress(): void
 }
 
-export const ChooseWallet: React.FC<Props> = ({ title, text, addOnboardingProgress }) => {
+export const ChooseWallet: React.FC<Props> = ({ title, text, step, addOnboardingProgress }) => {
   const { wallets } = useWallets()
 
   const [isChooseWalletModalOpen, setIsChooseWalletModalOpen] = useState(false)
@@ -59,7 +60,7 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, addOnboardingProgre
   return (
     <>
       <motion.div variants={fadeX} initial="hidden" animate="show" exit="exit">
-        <StepInformation title={title} text={text} />
+        <StepInformation title={title} text={text} step={step} />
         <motion.div
           className="flex flex-col h-full dark:text-white"
           variants={rowContainer}
@@ -77,28 +78,40 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, addOnboardingProgre
               . You can also search for BC Wallet in your phone's apps store.
             </p>
           </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: isMobile ? 'column' : 'row',
-            }}
-          >
-            <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
-              <img
-                src={appStore}
-                style={isMobile ? { width: '200px', marginBottom: '10px' } : { height: '50px', marginRight: '10px' }}
-                alt="app store"
-              />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
-              <img src={playStore} style={isMobile ? { width: '200px' } : { height: '50px' }} alt="google play store" />
-            </a>
-          </div>
-          {!isMobile && (
-            <div className="mt-5">
-              <QRCode value={`${baseUrl}/qr`} size={125} />
+          <div className="pt-4 flex-1 mb-6">
+            <div className="dark:text-white">
+              <div
+                className="flex bg-bcgov-white dark:bg-bcgov-black py-4 px-8"
+                style={{
+                  flexDirection: isMobile ? 'column' : 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
+                  <img
+                    src={appStore}
+                    style={
+                      isMobile ? { width: '200px', marginBottom: '10px' } : { height: '50px', marginRight: '10px' }
+                    }
+                    alt="app store"
+                  />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
+                  <img
+                    src={playStore}
+                    style={isMobile ? { width: '200px' } : { height: '50px' }}
+                    alt="google play store"
+                  />
+                </a>
+                {!isMobile && (
+                  <div>
+                    <QRCode value={`${baseUrl}/qr`} size={125} />
+                  </div>
+                )}
+              </div>
             </div>
-          )}
+          </div>
         </motion.div>
         <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>
           {selectedWallet && (

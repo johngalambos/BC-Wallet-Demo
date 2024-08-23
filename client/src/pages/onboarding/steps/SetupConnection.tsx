@@ -35,6 +35,7 @@ export interface Props {
   title: string
   text: string
   backgroundImage?: string
+  step?: number
   onConnectionComplete?: () => void
 }
 
@@ -50,6 +51,7 @@ export const SetupConnection: React.FC<Props> = ({
   issuerName,
   disableSkipConnection,
   backgroundImage,
+  step,
   onConnectionComplete,
 }) => {
   const deepLink = `bcwallet://aries_connection_invitation?${invitationUrl?.split('?')[1]}`
@@ -137,7 +139,7 @@ export const SetupConnection: React.FC<Props> = ({
       animate="show"
       exit="exit"
     >
-      <StepInformation title={title} text={text} />
+      <StepInformation title={title} text={text} step={step} />
       <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
         {renderQRCode(true)}
       </div>
@@ -151,7 +153,7 @@ export const SetupConnection: React.FC<Props> = ({
       animate="show"
       exit="exit"
     >
-      <StepInformation title={title} text={text} />
+      <StepInformation title={title} text={text} step={step} />
       <div
         className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center"
         style={{ backgroundImage: `url(${prependApiUrl(backgroundImage as string)})` }}

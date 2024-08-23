@@ -9,9 +9,10 @@ export interface Props {
   title: string
   text: string
   textWithImage?: TextWithImage[]
+  step?: number
 }
 
-export const StepInformation: React.FC<Props> = ({ title, text, textWithImage }) => {
+export const StepInformation: React.FC<Props> = ({ title, text, textWithImage, step }) => {
   const lastIndex = title.lastIndexOf(' ')
   const lastWord = <span className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</span>
   const newTitle = title.substring(0, lastIndex)
@@ -19,6 +20,7 @@ export const StepInformation: React.FC<Props> = ({ title, text, textWithImage })
   return (
     <div className="flex flex-col leading-loose">
       <div className="flex-1 my-4">
+        <h4 className="font-semibold dark:text-white">Onboarding step {step}</h4>
         <h2 className="text-3xl md:text-4xl font-semibold dark:text-white">
           {newTitle}&nbsp;
           {lastWord}

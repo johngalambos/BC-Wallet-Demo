@@ -32,6 +32,7 @@ export interface Props {
   currentCharacter?: CustomCharacter
   title: string
   text: string
+  step?: number
   onCredentialAccepted?: () => void
 }
 
@@ -41,6 +42,7 @@ export const AcceptCredential: React.FC<Props> = ({
   currentCharacter,
   title,
   text,
+  step,
   onCredentialAccepted,
 }) => {
   const dispatch = useAppDispatch()
@@ -141,7 +143,7 @@ export const AcceptCredential: React.FC<Props> = ({
 
   return (
     <motion.div className="flex flex-col h-full" variants={fadeX} initial="hidden" animate="show" exit="exit">
-      <StepInformation title={title} text={text} />
+      <StepInformation title={title} text={text} step={step} />
       <div className="flex flex-row m-auto content-center">
         {credentials.length ? (
           <AnimatePresence exitBeforeEnter>

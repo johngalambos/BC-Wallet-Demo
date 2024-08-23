@@ -54,31 +54,36 @@ export const contractorCustom: CustomCharacter = {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Bob',
       text: 'Bob is a contractor. To help verify his credentials quicker, Technical Safety B.C. is going to offer Bob a Trade Qualifications Card to put in his BC Wallet.',
+      step: 1,
     },
     {
       screenId: 'SETUP_START',
-      title: "Let's get started!",
+      title: 'Learn about digital credentials',
       text: 'What is the BC Wallet? \nThe BC Wallet is an app created by the Government of British Columbia that allows users to store and use digital credentials on their smartphones. These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
       image: '/public/common/getStarted.svg',
+      step: 2,
     },
     {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
       text: 'First, install the BC Wallet app onto your smartphone. Select the button below for instructions and the next step.',
       image: '/public/common/app-store-screenshots.png',
+      step: 3,
     },
     {
       screenId: 'CONNECT',
-      title: 'Connect with Technical Safety B.C.',
-      text: 'Bob will need a Trade Qualification card to work on projects. Use your BC Wallet to scan the QR code from the website.',
+      title: 'Get a certificate of qualifications',
+      text: 'Bob will need a Certificate of Qualifications to work on projects. Use your BC Wallet to scan the QR code from the website.',
       image: '/public/student/onboarding-connect-light.svg',
       issuer_name: 'COV Showcase - Technical Safety BC',
+      step: 4,
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
-      title: 'Accept your Trade Qualification Card',
+      title: 'Add the credential to your wallet',
       text: "Your wallet now has a secure and private connection with Technical Safety B.C. You should have received an offer in BC Wallet for a Certificate of Qualifications.\nReview what they are sending, and choose 'Accept offer'.",
       image: '/public/common/onboarding-credential-light.svg',
+      step: 4,
       credentials: [
         {
           name: 'certificate_of_qualification',
@@ -115,9 +120,10 @@ export const contractorCustom: CustomCharacter = {
     },
     {
       screenId: 'SETUP_COMPLETED',
-      title: "You're all set!",
+      title: 'Recap and next steps',
       text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
       image: '/public/common/onboarding-completed-light.svg',
+      step: 5,
     },
   ],
   useCases: [

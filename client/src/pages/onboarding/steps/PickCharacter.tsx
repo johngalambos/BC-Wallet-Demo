@@ -18,12 +18,14 @@ export interface Props {
   title: string
   text: string
   textWithImage?: TextWithImage[]
+  step?: number
 }
 
-export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage }) => {
+export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage, step }) => {
   const dispatch = useAppDispatch()
   const darkMode = useDarkMode()
-  const defaultTitle = `Who do you want to be today?`
+  const defaultStep = 1
+  const defaultTitle = `Choose a character`
   const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don’t worry, you can change your character later.`
   const titleText = title
   const mainText = text
@@ -72,6 +74,7 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
         title={titleText === '' ? defaultTitle : titleText}
         text={mainText === '' ? defaultText : mainText}
         textWithImage={textWithImage}
+        step={step === undefined ? defaultStep : step}
       />
 
       <div className="flex flex-col lg:flex-row items-left lg:items-start justify-between px-8 h-full max-h-72 sm:max-h-96 overflow-y-scroll lg:overflow-y-hidden">

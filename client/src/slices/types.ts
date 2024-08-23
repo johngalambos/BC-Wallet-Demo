@@ -40,6 +40,7 @@ export interface OnboardingStep {
   issuer_name?: string
   image?: string
   credentials?: Credential[]
+  step?: number
 }
 
 export interface CredentialRequest {
