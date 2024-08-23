@@ -38,6 +38,9 @@
     handle /digital-trust/showcase/demo {
         redir {vars.basePath}
     }
+    handle /digital-trust/showcase/dashboard {
+        redir {vars.basePath}
+    }
     handle /digital-trust/showcase* {
 
          # Required for SPA router to work
