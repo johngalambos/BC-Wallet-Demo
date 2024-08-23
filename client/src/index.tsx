@@ -26,7 +26,7 @@ render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/digital-trust/showcase">
+        <BrowserRouter>
           <KBar>
             <App />
           </KBar>
