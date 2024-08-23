@@ -377,18 +377,18 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Apply for a Letter of Authorization',
+      name: 'Create a Digital Letter of Authorization for your tenant',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Letter of Authorization',
-          text: 'Sally (that’s you in this demo) can apply for a Apply for a Letter of Authorization from City of Vancouver and using her Long Term Rental (LTR) Business License.',
+          title: 'Create a Digital Letter of Authorization for your tenant',
+          text: "Sally (that's you in this Demo) can take advantage of the BC Wallet to issue a digital Letter of Authorization to allow her tenant to apply for a Short Term Rental Business Licence.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your credentials',
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+          title: 'Scan the QR Code to share your HomeOwner credential',
+          text: 'The HomeOwner Credential allows the City of Vancouver to verify in real time your relationship to the property without asking you to submit copies/images of your driver licence and other sensitive documents.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
@@ -401,10 +401,10 @@ export const homeOwnerCustom: CustomCharacter = {
             text: 'City of Vancouver would like some of your personal information.',
             requestedCredentials: [
               {
-                icon: '/public/homeowner/icon-cov.png',
-                name: 'LTR_DiBL_Credential',
+                icon: '/public/homeowner/icon-ltsa.svg',
+                name: 'homeowner_credential',
                 properties: [
-                  'license_number',
+                  'title',
                   'given_names',
                   'family_name',
                   'expiry_date',
@@ -413,7 +413,7 @@ export const homeOwnerCustom: CustomCharacter = {
                   'locality',
                   'country',
                   'postal_code',
-                  'own_rent',
+                  'parcel_id',
                 ],
               },
             ],
