@@ -5,10 +5,16 @@ import React, { useState } from 'react'
 import { isMobile, isBrowser } from 'react-device-detect'
 
 import { fadeX, rowContainer } from '../../../FramerAnimations'
+import { baseUrl } from '../../../api/BaseUrl'
+import appStore from '../../../assets/light/app-store-badge.svg'
+import playStore from '../../../assets/light/google-play-badge.png'
 import { useWallets } from '../../../slices/wallets/walletsSelectors'
 import { StepInformation } from '../components/StepInformation'
 import { WalletItem } from '../components/WalletItem'
 import { WalletModal } from '../components/WalletModal'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const QRCode = require('qrcode.react')
 
 export interface Props {
   title: string
@@ -51,28 +57,60 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, addOnboardingProgre
   const style = isBrowser ? { marginBottom: '1rem', maxHeight: '35vh' } : { maxHeight: '34vh' }
 
   return (
-    <motion.div variants={fadeX} initial="hidden" animate="show" exit="exit">
-      <StepInformation title={title} text={text} />
-      <motion.div
-        className="flex flex-col md:px-4 h-full max-h-96 overflow-x-hidden"
-        variants={rowContainer}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-        style={style}
-      >
-        {renderWallets}
+    <>
+      <motion.div variants={fadeX} initial="hidden" animate="show" exit="exit">
+        <StepInformation title={title} text={text} />
+        <motion.div
+          className="flex flex-col h-full dark:text-white"
+          variants={rowContainer}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          style={style}
+        >
+          <div>
+            <p className="mb-5">
+              To download,{' '}
+              {isMobile
+                ? 'select the apps store icon below'
+                : 'scan this QR code with your phone or select the apps store icon below'}
+              . You can also search for BC Wallet in your phone's apps store.
+            </p>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+            }}
+          >
+            <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
+              <img
+                src={appStore}
+                style={isMobile ? { width: '200px', marginBottom: '10px' } : { height: '50px', marginRight: '10px' }}
+                alt="app store"
+              />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
+              <img src={playStore} style={isMobile ? { width: '200px' } : { height: '50px' }} alt="google play store" />
+            </a>
+          </div>
+          {!isMobile && (
+            <div className="mt-5">
+              <QRCode value={`${baseUrl}/qr`} size={125} />
+            </div>
+          )}
+        </motion.div>
+        <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>
+          {selectedWallet && (
+            <WalletModal
+              isWalletModalOpen={isChooseWalletModalOpen}
+              setIsWalletModalOpen={setIsChooseWalletModalOpen}
+              wallet={selectedWallet}
+              onCompleted={onCompleted}
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
-      <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>
-        {selectedWallet && (
-          <WalletModal
-            isWalletModalOpen={isChooseWalletModalOpen}
-            setIsWalletModalOpen={setIsChooseWalletModalOpen}
-            wallet={selectedWallet}
-            onCompleted={onCompleted}
-          />
-        )}
-      </AnimatePresence>
-    </motion.div>
+    </>
   )
 }

@@ -64,7 +64,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
-      text: 'First, install the BC Wallet app onto your smartphone. Select the button below for instructions and the next step.',
+      text: 'First, install the BC Wallet app onto your smartphone.',
       image: '/public/common/app-store-screenshots.png',
     },
     {
