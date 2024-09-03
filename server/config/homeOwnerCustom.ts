@@ -7,7 +7,7 @@ export const homeOwnerCustom: CustomCharacter = {
   type: 'Homeowner',
   image: '/public/homeowner/homeowner.svg',
   description:
-    'Sally is a homeowner. She wants to publish a listing on Airbnb for her space. To do this, she will need to verify her ownership.',
+    'Sally is a homeowner. She wants to rent out her space. To do this, she will need to verify her ownership.',
   // revocationInfo: [
   //   {
   //     credentialName: 'Trade Qualifications Card',
@@ -53,7 +53,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Sally',
-      text: 'Sally is a homeowner. She wants to publish a listing on Airbnb for her space. To do this, she will need to verify her ownership.',
+      text: 'Sally is a homeowner. She wants to rent out her space. To do this, she will need to verify her ownership.',
       step: 1,
     },
     {

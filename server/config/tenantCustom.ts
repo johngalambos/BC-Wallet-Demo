@@ -8,7 +8,7 @@ export const tenantCustom: CustomCharacter = {
   image: '/public/representative/representative.svg',
   prerequisites: ['Homeowner'],
   description:
-    'James is a tenant. He wants to publish a listing on Airbnb for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
+    'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
   revocationInfo: [
     {
       type: 'revoke',
@@ -83,7 +83,7 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet James',
-      text: 'James is a tenant. He wants to publish a listing on Airbnb for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
+      text: 'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
       step: 1,
     },
     {
@@ -385,20 +385,20 @@ export const tenantCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Post a Short Term Rental Listing online',
-          text: "Imagine if listing platforms were able to instantly confirm the address of Sally's listing and ensure that Sally has a valid STR Business License with the municipality where her property is located. This would increase the trust in the listings and lower the risk for renters. Let's follow Sally on her hypothetical  journey to post a listing.",
+          text: "Imagine if listing platforms were able to instantly confirm the address of James's listing and ensure that James has a valid STR Business License with the municipality where he lives. This would increase the trust in the listings and lower the risk for renters. Let's follow James on his hypothetical journey to post a listing.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
           title: 'Activate a Listing on STR.com',
-          text: 'After having used her Homeowner Credential to create an account on STR.com and creating a listing for her spare bedroom, Sally uses her digital STR Business License to publish the listing. Her credential is proof that she complies with her local municipal regulations. \nScan the QR code with your BC Wallet to get started.',
+          text: 'After having used his Person credential to create an account on STR.com and creating a listing for his space, James uses his digital STR Business License to publish the listing. His credential is proof that he complies with his local municipal regulations. \nScan the QR code with your BC Wallet to get started.',
           image: '/public/homeowner/useCases/airbnbOverlay.png',
           verifier: { name: 'STR.com', icon: '/public/homeowner/icon-airbnb.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. Airbnb is requesting that you prove only what is needed.",
+          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. STR.com is requesting that you prove only what is needed.",
           requestOptions: {
             title: 'STR.com Request',
             text: 'STR.com would like some of your personal information.',
@@ -426,7 +426,7 @@ export const tenantCustom: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'Airbnb has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that Airbnb could easily and automatically trust.',
+          text: 'STR.com has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that STR.com could easily and automatically trust.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
