@@ -35,7 +35,7 @@ export const DashboardPage: React.FC = () => {
 
   useEffect(() => {
     if (completedUseCaseSlugs.length !== 0 && completedUseCaseSlugs.length === useCases?.length && !completeCanceled) {
-      dispatch(setDemoCompleted(true))
+      dispatch(setDemoCompleted({ type: currentCharacter?.type, demoCompleted: true }))
     }
   }, [completedUseCaseSlugs, useCases])
 
@@ -47,7 +47,7 @@ export const DashboardPage: React.FC = () => {
   const ERROR_DESCRIPTION = `That's not gone well. Please restart the demo.`
   const routeError = () => {
     navigate(`${basePath}/demo`)
-    dispatch({ type: 'demo/RESET' })
+    dispatch({ type: 'demo/FULLRESET' })
   }
 
   const completeDemo = () => {
@@ -65,7 +65,7 @@ export const DashboardPage: React.FC = () => {
   }
 
   const cancelCompleteDemo = () => {
-    dispatch(setDemoCompleted(false))
+    dispatch(setDemoCompleted({ type: currentCharacter?.type, demoCompleted: true }))
   }
 
   return (

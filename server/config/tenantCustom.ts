@@ -6,6 +6,7 @@ export const tenantCustom: CustomCharacter = {
   name: 'James',
   type: 'Tenant',
   image: '/public/representative/representative.svg',
+  prerequisites: ['Homeowner'],
   description:
     'James is a tenant. He wants to publish a listing on Airbnb for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
   revocationInfo: [
@@ -134,7 +135,7 @@ export const tenantCustom: CustomCharacter = {
             },
             {
               name: 'family_name',
-              value: 'tenant',
+              value: 'Tenant',
             },
             {
               name: 'locality',
@@ -176,12 +177,12 @@ export const tenantCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Apply for a Strata Letter of Authorization',
+      name: 'Receive Letter of Authorization from landlord',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Strata Letter of Authorization',
-          text: 'James can apply for a Strata Letter of Authorization from the strata using his Person Credential and his Digital Letter of Authorization.',
+          title: 'Receive Letter of Authorization',
+          text: 'James had previously requested authorization from his landlord to apply for a Short Term Rentals Business Licence with the City of Vancouver. His landlord agreed with his request and James has received an email notification with instructions to obtain a digital Letter of Authorization into his BC Wallet.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -211,31 +212,18 @@ export const tenantCustom: CustomCharacter = {
                   'postal_code',
                 ],
               },
-              {
-                icon: '/public/homeowner/icon-cov.png',
-                name: 'DigitalLetterOfAuthorization',
-                properties: [
-                  'given_names',
-                  'family_name',
-                  'street_address',
-                  'region',
-                  'locality',
-                  'country',
-                  'postal_code',
-                ],
-              },
             ],
           },
         },
         {
           screenId: 'CREDENTIAL',
           title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided James with the Digital Letter of Authorization.',
+          text: 'Check your phone. City of Vancouver has provided James with the Letter of Authorization.',
           issueCredentials: [
             {
               id: '',
               icon: '/public/homeowner/icon-cov.png',
-              name: 'StrataLetterOfAuthorization',
+              name: 'DigitalLetterOfAuthorization',
               version: '1.0.0',
               attributes: [
                 {
@@ -248,7 +236,7 @@ export const tenantCustom: CustomCharacter = {
                 },
                 {
                   name: 'family_name',
-                  value: 'tenant',
+                  value: 'Tenant',
                 },
                 {
                   name: 'locality',
@@ -307,7 +295,7 @@ export const tenantCustom: CustomCharacter = {
             requestedCredentials: [
               {
                 icon: '/public/homeowner/icon-cov.png',
-                name: 'StrataLetterOfAuthorization',
+                name: 'DigitalLetterOfAuthorization',
                 properties: [
                   'given_names',
                   'family_name',
@@ -330,7 +318,7 @@ export const tenantCustom: CustomCharacter = {
               id: '',
               icon: '/public/homeowner/icon-cov.png',
               name: 'STR_DiBL_Credential',
-              version: '1.0.0',
+              version: '1.0.1',
               attributes: [
                 {
                   name: 'license_number',
@@ -338,7 +326,7 @@ export const tenantCustom: CustomCharacter = {
                 },
                 {
                   name: 'family_name',
-                  value: 'Builder',
+                  value: 'Tenant',
                 },
                 {
                   name: 'given_names',
@@ -372,6 +360,10 @@ export const tenantCustom: CustomCharacter = {
                   name: 'expiry_date',
                   value: `${getDateInt(1)}`,
                 },
+                {
+                  name: 'license_status',
+                  value: 'Active',
+                },
               ],
               connectionId: '',
             },
@@ -387,38 +379,39 @@ export const tenantCustom: CustomCharacter = {
     },
     {
       type: 'useCase',
-      id: 'Airbnb',
-      name: 'Publish listing on Airbnb',
+      id: 'STRListing',
+      name: 'Post a Short Term Rental Listing online',
       screens: [
         {
           screenId: 'START',
-          title: 'Post listing on Airbnb',
-          text: 'James can use his STR DiBL Credential from the City of Vancouver to fill out information on Airbnb to post a listing for his space.',
+          title: 'Post a Short Term Rental Listing online',
+          text: "Imagine if listing platforms were able to instantly confirm the address of Sally's listing and ensure that Sally has a valid STR Business License with the municipality where her property is located. This would increase the trust in the listings and lower the risk for renters. Let's follow Sally on her hypothetical  journey to post a listing.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your qualifications',
-          text: 'Airbnb offers a quick way to verify your qualifications. Scan the QR code with your BC Wallet to get started.',
+          title: 'Activate a Listing on STR.com',
+          text: 'After having used her Homeowner Credential to create an account on STR.com and creating a listing for her spare bedroom, Sally uses her digital STR Business License to publish the listing. Her credential is proof that she complies with her local municipal regulations. \nScan the QR code with your BC Wallet to get started.',
           image: '/public/homeowner/useCases/airbnbOverlay.png',
-          verifier: { name: 'Airbnb', icon: '/public/homeowner/icon-airbnb.png' },
+          verifier: { name: 'STR.com', icon: '/public/homeowner/icon-airbnb.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
           text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. Airbnb is requesting that you prove only what is needed.",
           requestOptions: {
-            title: 'Airbnb Request',
-            text: 'Airbnb would like some of your personal information.',
+            title: 'STR.com Request',
+            text: 'STR.com would like some of your personal information.',
             requestedCredentials: [
               {
                 icon: '/public/homeowner/icon-cov.png',
                 name: 'STR_DiBL_Credential',
                 properties: [
                   'license_number',
+                  'expiry_date',
+                  'license_status',
                   'given_names',
                   'family_name',
-                  'expiry_date',
                   'street_address',
                   'region',
                   'locality',

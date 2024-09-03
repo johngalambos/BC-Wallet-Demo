@@ -8,8 +8,8 @@ import { tenantCustom } from '../../config/tenantCustom'
 const characters: CustomCharacter[] = [
   // studentCustom,
   // lawyerCustom,
-  businessCustom,
-  contractorCustom,
+  // businessCustom,
+  // contractorCustom,
   homeOwnerCustom,
   tenantCustom,
 ]

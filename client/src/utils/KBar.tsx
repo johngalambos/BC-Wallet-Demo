@@ -88,7 +88,7 @@ export const KBar: React.FC = ({ children }) => {
       keywords: 'Reset demo',
       perform: () => {
         navigate(`${basePath}/`)
-        dispatch({ type: 'demo/RESET' })
+        dispatch({ type: 'demo/FULLRESET' })
         dispatch(fetchWallets())
         dispatch(fetchAllCharacters())
       },

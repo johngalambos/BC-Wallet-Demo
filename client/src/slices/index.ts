@@ -24,6 +24,10 @@ const rootReducer = combineReducers({
   useCases: useCaseSlice,
 })
 
+const extractCompletedCharacters = (state: any) => {
+  return state?.preferences?.completedCharacters || []
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const pReducer = (state: any, action: any) => {
   if (action.type === 'persist/REHYDRATE') {
@@ -37,6 +41,18 @@ const pReducer = (state: any, action: any) => {
   }
 
   if (action.type === 'demo/RESET') {
+    const completedCharacters = extractCompletedCharacters(state)
+    const newState = rootReducer(undefined, action)
+    return {
+      ...newState,
+      preferences: {
+        ...newState.preferences,
+        completedCharacters,
+      },
+    }
+  }
+
+  if (action.type === 'demo/FULLRESET') {
     return rootReducer(undefined, action)
   }
 

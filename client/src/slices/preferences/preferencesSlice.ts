@@ -10,6 +10,7 @@ interface PreferencesState {
   revocationEnabled: boolean
   characterUploadEnabled: boolean
   completedUseCaseSlugs: string[]
+  completedCharacters: string[]
   demoCompleted: boolean
   completeCanceled: boolean
   connectionDate?: Date
@@ -22,6 +23,7 @@ const initialState: PreferencesState = {
   revocationEnabled: true,
   characterUploadEnabled: false,
   completedUseCaseSlugs: [],
+  completedCharacters: [],
   demoCompleted: false,
   completeCanceled: false,
   connectionDate: undefined,
@@ -56,7 +58,8 @@ const preferencesSlice = createSlice({
       state.showHiddenUseCases = !state.showHiddenUseCases
     },
     setDemoCompleted: (state, val) => {
-      state.demoCompleted = val.payload
+      state.demoCompleted = val.payload.demoCompleted
+      state.completedCharacters.push(val.payload.type)
     },
     resetDashboard: (state) => {
       state.completedUseCaseSlugs = []
@@ -70,6 +73,10 @@ const preferencesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase('demo/FULLRESET', (state) => {
+        state.darkMode = localStorage.getItem('theme') === 'dark'
+        state.connectionDate = undefined
+      })
       .addCase('demo/RESET', (state) => {
         state.darkMode = localStorage.getItem('theme') === 'dark'
         state.connectionDate = undefined

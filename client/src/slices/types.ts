@@ -94,6 +94,7 @@ export interface RevocationInfoItem {
 }
 
 export interface CustomCharacter {
+  prerequisites: string[]
   name: string
   type: string
   image: string

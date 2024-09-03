@@ -223,7 +223,7 @@ export const OnboardingContainer: React.FC<Props> = ({
     } else {
       // something went wrong so reset
       navigate(`${basePath}/`)
-      dispatch({ type: 'demo/RESET' })
+      dispatch({ type: 'demo/FULLRESET' })
     }
   }
 
@@ -247,7 +247,7 @@ export const OnboardingContainer: React.FC<Props> = ({
       },
     })
     navigate(`${basePath}/`)
-    dispatch({ type: 'demo/RESET' })
+    dispatch({ type: 'demo/FULLRESET' })
   }
 
   return (

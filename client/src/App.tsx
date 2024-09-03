@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
 import { Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom'
 
 import { useAppDispatch } from './hooks/hooks'
@@ -27,6 +28,22 @@ function App() {
   const localStorageTheme = localStorage.theme === 'dark'
   const windowMedia = !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches
 
+  const tagManagerArgs = {
+    gtmId: 'GTM-T283ZMX9',
+  }
+
+  TagManager.initialize(tagManagerArgs)
+
+  useEffect(() => {
+    const tagManagerArgs = {
+      dataLayer: {
+        event: 'pageview',
+        page: location.pathname,
+      },
+    }
+    TagManager.dataLayer(tagManagerArgs)
+  }, [location])
+
   useEffect(() => {
     if (localStorageTheme || windowMedia) {
       dispatch(setDarkMode(true))
@@ -43,7 +60,7 @@ function App() {
     if (connectionDate && lastServerReset) {
       if (connectionDate < lastServerReset) {
         navigate(`${basePath}/`)
-        dispatch({ type: 'demo/RESET' })
+        dispatch({ type: 'demo/FULLRESET' })
       }
     }
   }, [connectionDate, lastServerReset])

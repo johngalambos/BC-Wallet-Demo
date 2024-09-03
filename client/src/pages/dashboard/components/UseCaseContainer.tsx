@@ -2,6 +2,7 @@ import type { CustomCharacter } from '../../../slices/types'
 
 import { motion } from 'framer-motion'
 import React from 'react'
+import TagManager from 'react-gtm-module'
 import { useNavigate } from 'react-router-dom'
 
 import { dashboardSub, dashboardTitle, rowContainer } from '../../../FramerAnimations'
@@ -20,6 +21,12 @@ export const UseCaseContainer: React.FC<Props> = ({ currentCharacter, completedU
   const navigate = useNavigate()
 
   const startUseCase = (slug: string) => {
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'buttonClick',
+        buttonId: slug,
+      },
+    })
     navigate(`${basePath}/uc/${slug}`)
   }
 

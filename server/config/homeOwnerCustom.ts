@@ -273,7 +273,7 @@ export const homeOwnerCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Apply for a Long Term Rental (LTR) Business License',
-          text: "Sally owns a home that she wishes to rent out, and the City of Vancouver (CoV) requires her to obtain a Long Term Rental Business Licence (LTRBL). Sally uses her BC Wallet to fill out the application form; she does this by agreeing to share the information contained in her HomeOwner credential to populate the form fields. \nClick [START] to follow Sally's journey.",
+          text: "Sally owns a home that she wishes to rent out, and the City of Vancouver (CoV) requires her to obtain a Long Term Rental Business Licence (LTRBL). Sally uses her BC Wallet to fill out the application form; she does this by agreeing to share the information contained in her Homeowner credential to populate the form fields. \nClick [START] to follow Sally's journey.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -377,18 +377,18 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Create a Digital Letter of Authorization for your tenant',
+      name: 'Issue Letter of Authorization to your tenant',
       screens: [
         {
           screenId: 'START',
-          title: 'Create a Digital Letter of Authorization for your tenant',
-          text: "Sally (that's you in this Demo) can take advantage of the BC Wallet to issue a digital Letter of Authorization to allow her tenant to apply for a Short Term Rental Business Licence.",
+          title: 'Issue Letter of Authorization to your tenant',
+          text: "Sally's tenant, James, needs to apply for a permit to operate a Short Term Rental (STR) in the property. He has sent a request to Sally, she will need to use her BC Wallet to verify she is the homeowner to issue the Letter of Authorization to James.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Scan the QR Code to share your HomeOwner credential',
-          text: 'The HomeOwner Credential allows the City of Vancouver to verify in real time your relationship to the property without asking you to submit copies/images of your driver licence and other sensitive documents.',
+          title: 'Scan the QR Code to share your Homeowner credential',
+          text: 'The Homeowner Credential allows the City of Vancouver to verify in real time your relationship to the property without asking you to submit copies/images of your driver licence and other sensitive documents.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
@@ -404,7 +404,6 @@ export const homeOwnerCustom: CustomCharacter = {
                 icon: '/public/homeowner/icon-ltsa.svg',
                 name: 'homeowner_credential',
                 properties: [
-                  'title',
                   'given_names',
                   'family_name',
                   'expiry_date',
@@ -420,230 +419,174 @@ export const homeOwnerCustom: CustomCharacter = {
           },
         },
         {
-          screenId: 'INFO',
-          title: 'Grant Authorization to a Tenant',
-          text: 'As a homeowner, you can select what authorization to grant to a tenant. You can choose to grant authorization to a tenant to operate a STR, to apply for renovations, or any other authorization you wish to grant.',
-        },
-        {
-          screenId: 'CONNECTION2',
-          title: 'Tenant - Scan to receive credential',
-          text: 'Imagine you are the tenant. City of Vancouver will provide the tenant with the Letter of Authorization. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/covOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
-        },
-        {
-          screenId: 'CREDENTIAL',
-          title: 'Tenant - Receive credential',
-          text: 'Imagine you are the tenant. City of Vancouver has provided the tenant with the Letter of Authorization.',
-          issueCredentials: [
-            {
-              id: '',
-              icon: '/public/homeowner/icon-cov.png',
-              name: 'DigitalLetterOfAuthorization',
-              version: '1.0.0',
-              attributes: [
-                {
-                  name: 'postal_code',
-                  value: 'V6B2B5',
-                },
-                {
-                  name: 'given_names',
-                  value: 'James',
-                },
-                {
-                  name: 'family_name',
-                  value: 'Tenant',
-                },
-                {
-                  name: 'locality',
-                  value: 'BC',
-                },
-                {
-                  name: 'region',
-                  value: 'Vancouver',
-                },
-                {
-                  name: 'street_address',
-                  value: '814 Richards St',
-                },
-                {
-                  name: 'country',
-                  value: 'Canada',
-                },
-              ],
-              connectionId: '',
-            },
-          ],
-        },
-        {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'Your tenant received the Letter of Authroization. They can now use this credential to apply for anything you (the homeowner) have allowed. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          text: 'Your tenant has been notified that you provided authorization to apply for a STR.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
     },
-    {
-      type: 'useCase',
-      id: 'STRDiBLCredential',
-      name: 'Apply for a Short Term Rental (STR) Business License',
-      screens: [
-        {
-          screenId: 'START',
-          title: 'Apply for a Short Term Rental (STR) Business License',
-          text: 'Sally (that’s you in this demo) can apply for a Short Term Rental (STR) Business License from City of Vancouver and using her Homeowner Credential.',
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
-        },
-        {
-          screenId: 'CONNECTION',
-          title: 'Start providing your credentials',
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/covOverlay.png',
-          verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
-        },
-        {
-          screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
-          requestOptions: {
-            title: 'City of Vancouver Request',
-            text: 'City of Vancouver would like some of your personal information.',
-            requestedCredentials: [
-              {
-                icon: '/public/homeowner/icon-ltsa.svg',
-                name: 'homeowner_credential',
-                properties: [
-                  'title',
-                  'given_names',
-                  'family_name',
-                  'expiry_date',
-                  'street_address',
-                  'region',
-                  'locality',
-                  'country',
-                  'postal_code',
-                  'parcel_id',
-                ],
-              },
-            ],
-          },
-        },
-        {
-          screenId: 'CREDENTIAL',
-          title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided you with the Short Term Rental (STR) Business License.',
-          issueCredentials: [
-            {
-              id: '',
-              icon: '/public/homeowner/icon-cov.png',
-              name: 'STR_DiBL_Credential',
-              version: '1.0.0',
-              attributes: [
-                {
-                  name: 'license_number',
-                  value: '1234567890',
-                },
-                {
-                  name: 'family_name',
-                  value: 'Builder',
-                },
-                {
-                  name: 'given_names',
-                  value: 'Sally',
-                },
-                {
-                  name: 'own_rent',
-                  value: 'Own',
-                },
-                {
-                  name: 'street_address',
-                  value: '814 Richards St',
-                },
-                {
-                  name: 'country',
-                  value: 'Canada',
-                },
-                {
-                  name: 'locality',
-                  value: 'BC',
-                },
-                {
-                  name: 'region',
-                  value: 'Vancouver',
-                },
-                {
-                  name: 'postal_code',
-                  value: 'V6B2B5',
-                },
-                {
-                  name: 'expiry_date',
-                  value: `${getDateInt(1)}`,
-                },
-              ],
-              connectionId: '',
-            },
-          ],
-        },
-        {
-          screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'You’ve received the Short Term Rental (STR) Business License. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
-          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
-        },
-      ],
-    },
-    {
-      type: 'useCase',
-      id: 'Airbnb',
-      name: 'Publish listing on Airbnb',
-      screens: [
-        {
-          screenId: 'START',
-          title: 'Post listing on Airbnb',
-          text: 'Sally can use her Short Term Rental (STR) Business License from the City of Vancouver to fill out information on Airbnb to post a listing for her space.',
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
-        },
-        {
-          screenId: 'CONNECTION',
-          title: 'Start providing your credentials',
-          text: 'Airbnb offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/airbnbOverlay.png',
-          verifier: { name: 'Airbnb', icon: '/public/homeowner/icon-airbnb.png' },
-        },
-        {
-          screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. Airbnb is requesting that you prove only what is needed.",
-          requestOptions: {
-            title: 'Airbnb Request',
-            text: 'Airbnb would like some of your personal information.',
-            requestedCredentials: [
-              {
-                icon: '/public/homeowner/icon-cov.png',
-                name: 'STR_DiBL_Credential',
-                properties: [
-                  'license_number',
-                  'given_names',
-                  'family_name',
-                  'expiry_date',
-                  'street_address',
-                  'region',
-                  'locality',
-                  'country',
-                  'postal_code',
-                  'own_rent',
-                ],
-              },
-            ],
-          },
-        },
-        {
-          screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'Airbnb has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that Airbnb could easily and automatically trust.',
-          image: '/public/lawyer2/onboarding/lawyer2Success.svg',
-        },
-      ],
-    },
+    // {
+    //   type: 'useCase',
+    //   id: 'STRDiBLCredential',
+    //   name: 'Apply for a Short Term Rental (STR) Business License',
+    //   screens: [
+    //     {
+    //       screenId: 'START',
+    //       title: 'Apply for a Short Term Rental (STR) Business License',
+    //       text: 'Sally (that’s you in this demo) can apply for a Short Term Rental (STR) Business License from City of Vancouver and using her Homeowner Credential.',
+    //       image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+    //     },
+    //     {
+    //       screenId: 'CONNECTION',
+    //       title: 'Start providing your credentials',
+    //       text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+    //       image: '/public/homeowner/useCases/covOverlay.png',
+    //       verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
+    //     },
+    //     {
+    //       screenId: 'PROOF',
+    //       title: 'Confirm the information to send',
+    //       text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
+    //       requestOptions: {
+    //         title: 'City of Vancouver Request',
+    //         text: 'City of Vancouver would like some of your personal information.',
+    //         requestedCredentials: [
+    //           {
+    //             icon: '/public/homeowner/icon-ltsa.svg',
+    //             name: 'homeowner_credential',
+    //             properties: [
+    //               'title',
+    //               'given_names',
+    //               'family_name',
+    //               'expiry_date',
+    //               'street_address',
+    //               'region',
+    //               'locality',
+    //               'country',
+    //               'postal_code',
+    //               'parcel_id',
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //     },
+    //     {
+    //       screenId: 'CREDENTIAL',
+    //       title: 'Receive credential',
+    //       text: 'Check your phone. City of Vancouver has provided you with the Short Term Rental (STR) Business License.',
+    //       issueCredentials: [
+    //         {
+    //           id: '',
+    //           icon: '/public/homeowner/icon-cov.png',
+    //           name: 'STR_DiBL_Credential',
+    //           version: '1.0.0',
+    //           attributes: [
+    //             {
+    //               name: 'license_number',
+    //               value: '1234567890',
+    //             },
+    //             {
+    //               name: 'family_name',
+    //               value: 'Builder',
+    //             },
+    //             {
+    //               name: 'given_names',
+    //               value: 'Sally',
+    //             },
+    //             {
+    //               name: 'own_rent',
+    //               value: 'Own',
+    //             },
+    //             {
+    //               name: 'street_address',
+    //               value: '814 Richards St',
+    //             },
+    //             {
+    //               name: 'country',
+    //               value: 'Canada',
+    //             },
+    //             {
+    //               name: 'locality',
+    //               value: 'BC',
+    //             },
+    //             {
+    //               name: 'region',
+    //               value: 'Vancouver',
+    //             },
+    //             {
+    //               name: 'postal_code',
+    //               value: 'V6B2B5',
+    //             },
+    //             {
+    //               name: 'expiry_date',
+    //               value: `${getDateInt(1)}`,
+    //             },
+    //           ],
+    //           connectionId: '',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       screenId: 'STEP_END',
+    //       title: "You're done!",
+    //       text: 'You’ve received the Short Term Rental (STR) Business License. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+    //       image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+    //     },
+    //   ],
+    // },
+    // {
+    //   type: 'useCase',
+    //   id: 'Airbnb',
+    //   name: 'Publish listing on Airbnb',
+    //   screens: [
+    //     {
+    //       screenId: 'START',
+    //       title: 'Post listing on Airbnb',
+    //       text: 'Sally can use her Short Term Rental (STR) Business License from the City of Vancouver to fill out information on Airbnb to post a listing for her space.',
+    //       image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+    //     },
+    //     {
+    //       screenId: 'CONNECTION',
+    //       title: 'Start providing your credentials',
+    //       text: 'Airbnb offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
+    //       image: '/public/homeowner/useCases/airbnbOverlay.png',
+    //       verifier: { name: 'Airbnb', icon: '/public/homeowner/icon-airbnb.png' },
+    //     },
+    //     {
+    //       screenId: 'PROOF',
+    //       title: 'Confirm the information to send',
+    //       text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. Airbnb is requesting that you prove only what is needed.",
+    //       requestOptions: {
+    //         title: 'Airbnb Request',
+    //         text: 'Airbnb would like some of your personal information.',
+    //         requestedCredentials: [
+    //           {
+    //             icon: '/public/homeowner/icon-cov.png',
+    //             name: 'STR_DiBL_Credential',
+    //             properties: [
+    //               'license_number',
+    //               'given_names',
+    //               'family_name',
+    //               'expiry_date',
+    //               'street_address',
+    //               'region',
+    //               'locality',
+    //               'country',
+    //               'postal_code',
+    //               'own_rent',
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //     },
+    //     {
+    //       screenId: 'STEP_END',
+    //       title: "You're done!",
+    //       text: 'Airbnb has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that Airbnb could easily and automatically trust.',
+    //       image: '/public/lawyer2/onboarding/lawyer2Success.svg',
+    //     },
+    //   ],
+    // },
   ],
 }

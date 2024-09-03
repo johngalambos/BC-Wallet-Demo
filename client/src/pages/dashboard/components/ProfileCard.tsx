@@ -34,7 +34,7 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
         },
       },
     })
-    dispatch({ type: 'demo/RESET' })
+    dispatch({ type: 'demo/FULLRESET' })
   }
 
   const cancel = () => {
