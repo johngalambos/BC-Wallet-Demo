@@ -8,40 +8,40 @@ export const tenantCustom: CustomCharacter = {
   image: '/public/representative/representative.svg',
   prerequisites: ['Homeowner'],
   description:
-    'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
+    'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord.',
   revocationInfo: [
     {
       type: 'revoke',
-      id: 'revokeDigitalBusinessCard',
-      name: "Revoke James' Strata Letter of Authorization",
-      credentialName: 'Strata Letter of Authorization',
+      id: 'revokeDigitalLetterOfAuthorization',
+      name: "Revoke James' Letter of Authorization",
+      credentialName: 'Digital Letter of Authorization',
       credentialIcon: '/public/homeowner/icon-cov.png',
-      title: 'Revoke Strata Letter of Authorization',
+      title: 'Revoke Letter of Authorization',
       description:
-        "When James is no longer Sally's tenant, the strata needs to revoke James' Strata Letter of Authorization. Let's see how that works.",
+        "When James is no longer Sally's tenant, Sally needs to revoke James' Letter of Authorization. Let's see how that works.",
       screens: [
         {
           screenId: 'REVOKE',
-          title: 'Revoke Strata Letter of Authorization',
-          text: 'The strata will revoke James’s Strata Letter of Authorization as he no longer Sally’s tenant.',
+          title: 'Revoke Letter of Authorization',
+          text: 'Sally will revoke James’s Letter of Authorization as he no longer Sally’s tenant.',
           image: '/public/business/useCases/businessRevokeStart.svg',
         },
         {
           screenId: 'BUTTON',
-          title: 'Strata - Revoke the Strata Letter of Authorization',
-          text: 'The strata can revoke the credentials it issued. Let’s pretend we’re the strata and revoke James’s Strata Letter of Authorization.',
+          title: 'Sally - Homeowner Revokes the Letter of Authorization',
+          text: 'Sally can revoke the credentials it issued. Let’s pretend we’re Sally and revoke James’s Letter of Authorization.',
           image: '/public/business/useCases/businessRevoke.svg',
         },
         {
           screenId: 'INFO',
           title: 'James - Remove the revoked crediential from BC Wallet',
-          text: 'James’s Strata Letter of Authorization has been revoked by the strata. He will see a red (!) on his Strata Letter of Authorization. James can remove it from his BC Wallet. Organisations that request a Strata Letter of Authorization can identify that his has been revoked and choose not to accept it, even if he doesn’t remove it from his BC Wallet.',
+          text: 'James’s Letter of Authorization has been revoked by Sally. He will see a red (!) on his Letter of Authorization. James can remove it from his BC Wallet. Organizations that request a Letter of Authorization can identify that his has been revoked and choose not to accept it, even if he doesn’t remove it from his BC Wallet.',
           image: '/public/business/useCases/businessRemoveRevoke.png',
         },
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'The strata has revoked James’s Strata Letter of Authorization. James was notified and can remove it from his BC Wallet. If he rents another strata property, the strata there can issue him a Strata Letter of Authorization. It only took a few seconds and organisations that request a Strata Letter of Authorization can trust that the information it carries is up to date.',
+          text: 'Sally has revoked James’s Letter of Authorization. James was notified and can remove it from his BC Wallet. If he rents another property, the homeowner there can issue him a Letter of Authorization for that property. It only took a few seconds and organisations that request a Letter of Authorization can trust that the information it carries is up to date.',
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -83,7 +83,7 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet James',
-      text: 'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord and the strata.',
+      text: 'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord.',
       step: 1,
     },
     {
@@ -275,7 +275,7 @@ export const tenantCustom: CustomCharacter = {
         {
           screenId: 'START',
           title: 'Apply for a STR DiBL Credential',
-          text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Strata Letter of Authorization.',
+          text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Letter of Authorization.',
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
