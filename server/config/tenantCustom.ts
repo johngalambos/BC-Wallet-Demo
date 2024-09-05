@@ -8,7 +8,7 @@ export const tenantCustom: CustomCharacter = {
   image: '/public/representative/representative.svg',
   prerequisites: ['Homeowner'],
   description:
-    'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord.',
+    'James Tenant wants to sublet the secondary suite on a short-term basis while he travels. To do this, he needs to get a business license and prove to the City of Vancouver that he has permission from Sally Homeowner.',
   revocationInfo: [
     {
       type: 'revoke',
@@ -83,27 +83,27 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet James',
-      text: 'James is a tenant. He wants to publish a listing on STR.com for his space that he rents. To do this, he will need to get authorization from his landlord.',
+      text: 'James Tenant wants to sublet the secondary suite on a short-term basis while he travels. To do this, he needs to get a business license and prove to the City of Vancouver that he has permission from Sally Homeowner.',
       step: 1,
     },
     {
       screenId: 'SETUP_START',
       title: 'Learn about digital credentials',
-      text: 'What is the BC Wallet? \nThe BC Wallet is an app created by the Government of British Columbia that allows users to store and use digital credentials on their smartphones. These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
+      text: 'These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
       image: '/public/common/getStarted.svg',
       step: 2,
     },
     {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
-      text: 'First, install the BC Wallet app onto your smartphone. Select the button below for instructions and the next step.',
+      text: 'To complete the scenario as James Tenant, you will need to install the BC Wallet app on your iOS or Android smartphone.',
       image: '/public/common/app-store-screenshots.png',
       step: 3,
     },
     {
       screenId: 'CONNECT_PERSON',
       title: 'Get a person credential',
-      text: 'James gets his Person credential from the BC Services Card app. he starts the process within BC Wallet. For this demo you will scan this QR code to receive the credential offer.',
+      text: "As James Tenant, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're James when you access government services online so you don't have to provide a photo of your ID.",
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
@@ -168,7 +168,7 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
-      text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
       image: '/public/common/onboarding-completed-light.svg',
       step: 5,
     },
@@ -282,7 +282,7 @@ export const tenantCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Start providing your credentials',
           text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/covOverlay.png',
+          image: '/public/representative/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
@@ -392,8 +392,8 @@ export const tenantCustom: CustomCharacter = {
           screenId: 'CONNECTION',
           title: 'Activate a Listing on STR.com',
           text: 'After having used his Person credential to create an account on STR.com and creating a listing for his space, James uses his digital STR Business License to publish the listing. His credential is proof that he complies with his local municipal regulations. \nScan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/airbnbOverlay.png',
-          verifier: { name: 'STR.com', icon: '/public/homeowner/icon-airbnb.png' },
+          image: '/public/representative/useCases/strOverlay.png',
+          verifier: { name: 'STR.com', icon: '/public/representative/icon-str.png' },
         },
         {
           screenId: 'PROOF',

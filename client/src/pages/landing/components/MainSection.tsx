@@ -44,12 +44,13 @@ export const MainSection: React.FC = () => {
         <motion.h1 variants={landingTitle}>
           City of Vancouver
           <br />
-          BC Wallet Showcase Experiment
+          Digital credentials demo
         </motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey">
-          Explore the use-cases that the City of Vancouver is experimenting with to transform Digital Service Delivery.
+          See how using digital credentials to help deliver services helps save customers and staff time, and provide
+          organizations with trusted data.
         </motion.h2>
       </div>
       <div className="flex flex-col justify-center text-base sxl:text-lg font-normal mt-6 m-auto">
@@ -72,7 +73,7 @@ export const MainSection: React.FC = () => {
         <motion.h1 variants={landingTitle}>
           City of Vancouver
           <br />
-          BC Wallet Showcase Experiment
+          Digital credentials demo
         </motion.h1>
       </div>
       <div className="overflow-hidden">
@@ -80,7 +81,8 @@ export const MainSection: React.FC = () => {
           variants={fadeDelay}
           className="text-base lg:text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey"
         >
-          Explore the use-cases that the City of Vancouver is experimenting with to transform Digital Service Delivery.
+          See how using digital credentials to help deliver services helps save customers and staff time, and provide
+          organizations with trusted data.
         </motion.h2>
       </div>
       <div className="flex flex-row justify-start text-base sxl:text-lg  font-normal mt-6">

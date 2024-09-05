@@ -27,8 +27,8 @@ export const SetupCompleted: React.FC<Props> = ({ title, text, step, characterNa
         </div>
         <div className="pt-4 flex-1 mb-6">
           <div className="dark:text-white">
-            <p>{text}</p>
-            <div className="bg-bcgov-white dark:bg-bcgov-black py-4 px-8">
+            <p style={{ whiteSpace: 'pre-wrap' }}>{text}</p>
+            {/* <div className="bg-bcgov-white dark:bg-bcgov-black py-4 px-8">
               <ul className="list-disc">
                 <li>You control when you use your credentials</li>
                 <li>You can share all or parts of your credentials</li>
@@ -37,7 +37,7 @@ export const SetupCompleted: React.FC<Props> = ({ title, text, step, characterNa
                 <li>Anyone who receives information from your credentials can trust its legitimacy</li>
               </ul>
             </div>
-            <p>We're done with this step. Next, we'll explore ways you can use your credentials.</p>
+            <p>We're done with this step. Next, we'll explore ways you can use your credentials.</p> */}
           </div>
         </div>
       </div>

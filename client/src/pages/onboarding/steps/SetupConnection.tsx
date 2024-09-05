@@ -121,7 +121,7 @@ export const SetupConnection: React.FC<Props> = ({
       </>
       {!disableSkipConnection && (
         <div className="my-5">
-          <Button text="I Already Have my Credential" onClick={skipIssuance}></Button>
+          <Button text="I already added my Credential" onClick={skipIssuance}></Button>
         </div>
       )}
     </motion.div>
@@ -154,15 +154,12 @@ export const SetupConnection: React.FC<Props> = ({
       exit="exit"
     >
       <StepInformation title={title} text={text} step={step} />
-      <div
-        className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center"
-        style={{ backgroundImage: `url(${prependApiUrl(backgroundImage as string)})` }}
-      >
+      <div className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center">
         <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
-          <p className="text-center mb-2">Scan the QR Code below with your digital wallet.</p>
+          <p className="text-center mb-2">Open the BC Wallet app, select the scan button, and scan the QR code.</p>
           <div>{renderQRCode(true)}</div>
           <div className="mt-5">
-            <Button text="I Already Have my Credential" onClick={skipIssuance}></Button>
+            <Button text="I already added my Credential" onClick={skipIssuance}></Button>
           </div>
         </div>
       </div>

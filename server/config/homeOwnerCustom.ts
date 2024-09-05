@@ -7,7 +7,7 @@ export const homeOwnerCustom: CustomCharacter = {
   type: 'Homeowner',
   image: '/public/homeowner/homeowner.svg',
   description:
-    'Sally is a homeowner. She wants to rent out her space. To do this, she will need to verify her ownership.',
+    'Sally Homeowner wants to rent her secondary suite long-term to James Tenant. She allows James to sublet the suite short-term while he travels. To do this, she needs to get a business licence and prove to the City of Vancouver that she owns the property. Also, she needs to give James proof of her permission to sublet.',
   // revocationInfo: [
   //   {
   //     credentialName: 'Trade Qualifications Card',
@@ -53,27 +53,27 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'PICK_CHARACTER',
       title: 'Meet Sally',
-      text: 'Sally is a homeowner. She wants to rent out her space. To do this, she will need to verify her ownership.',
+      text: 'Sally Homeowner wants to rent her secondary suite long-term to James Tenant. She allows James to sublet the suite short-term while he travels. To do this, she needs to get a business licence and prove to the City of Vancouver that she owns the property. Also, she needs to give James proof of her permission to sublet.',
       step: 1,
     },
     {
       screenId: 'SETUP_START',
       title: 'Learn about digital credentials',
-      text: 'What is the BC Wallet? \nThe BC Wallet is an app created by the Government of British Columbia that allows users to store and use digital credentials on their smartphones. These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
+      text: 'These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
       image: '/public/common/getStarted.svg',
       step: 2,
     },
     {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
-      text: 'First, install the BC Wallet app onto your smartphone.',
+      text: 'To complete the scenario as Sally Homeowner, you will need to install the BC Wallet app on your iOS or Android smartphone.',
       image: '/public/common/app-store-screenshots.png',
       step: 3,
     },
     {
       screenId: 'CONNECT_PERSON',
       title: 'Get a person credential',
-      text: 'Sally gets her Person credential from the BC Services Card app. she starts the process within BC Wallet. For this demo you will scan this QR code to receive the credential offer.',
+      text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo of your ID.",
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
@@ -105,7 +105,7 @@ export const homeOwnerCustom: CustomCharacter = {
             },
             {
               name: 'family_name',
-              value: 'Builder',
+              value: 'Homeowner',
             },
             {
               name: 'locality',
@@ -138,7 +138,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
-      text: 'Congratulations, you’ve just received your first digital credentials. They are safely stored in your wallet and ready to be used. So, what are you waiting for? Let’s go!',
+      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
       image: '/public/common/onboarding-completed-light.svg',
       step: 5,
     },
@@ -147,25 +147,25 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'homeOwnerCredential',
-      name: 'Apply for a Homeowner Credential',
+      name: 'Get proof that you own the property',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Homeowner Credential',
-          text: 'Sally (that’s you in this demo) can apply for a homeowner credential from LTSA and using her Person Credential. LTSA requires you to upload your ID and other documentation proving your identity. Now you can use your Person Credential instead.',
+          title: 'Get proof that you own the property',
+          text: "As Sally, apply for a homeowner credential from BC Land Title and Survey Authority (LTSA). You'll provide your person credential in your BC Wallet to prove your identity.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your information',
-          text: 'LTSA offers a quick way to verify your information. Scan the QR code with your BC Wallet to get started.',
+          title: 'Scan the QR code to start sharing',
+          text: 'Open the BC Wallet app and scan the QR code on the LTSA website to start sharing your person credential with LTSA.',
           image: '/public/homeowner/useCases/ltsaOverlay.png',
           verifier: { name: 'LTSA', icon: '/public/homeowner/icon-ltsa.svg' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. LTSA is requesting that you prove only what is needed.",
+          title: 'Confirm the information to share',
+          text: 'In BC Wallet, view the request from LTSA to share your person credential. LTSA is requesting some of the information in your person credential – but not all of it. Select the share button and notice LTSA receives the information.',
           requestOptions: {
             title: 'LTSA Request',
             text: 'LTSA would like some of your personal information.',
@@ -187,8 +187,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'CREDENTIAL',
-          title: 'Receive credential',
-          text: 'Check your phone. LTSA has provided you with the Homeowner Credential.',
+          title: 'Get the homeowner credential',
+          text: "In BC Wallet, select the notifications menu and view the new credential offer from LTSA. Review the information that proves you're a homeowner. Scroll to the end and select the accept button.",
           issueCredentials: [
             {
               id: '',
@@ -259,8 +259,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'You’ve provided LTSA with the necessary information to receive the Homeowner credential. It only took a few seconds and you revealed minimal information that LTSA could easily and automatically trust.',
+          title: 'Chapter complete!',
+          text: "You received a homeowner credential from LTSA. In just a few easy steps, you shared minimal information to get proof you own a home that other organizations can trust because it's verified.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -268,25 +268,25 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'LTRDiBLCredential',
-      name: 'Apply for a Long Term Rental (LTR) Business License',
+      name: 'Get permission to rent long-term',
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a Long Term Rental (LTR) Business License',
-          text: "Sally owns a home that she wishes to rent out, and the City of Vancouver (CoV) requires her to obtain a Long Term Rental Business Licence (LTRBL). Sally uses her BC Wallet to fill out the application form; she does this by agreeing to share the information contained in her Homeowner credential to populate the form fields. \nClick [START] to follow Sally's journey.",
+          title: 'Get permission to rent long-term',
+          text: "As Sally, apply for a business licence from the City of Vancouver. You'll share your homeowner credential in your BC Wallet to answer questions on the application form that prove you own the home.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Scan the QR Code to share your Homeowner credential',
-          text: 'After scanning with your BC Wallet app, you will see an invitation to share specific information contained in your Homeowner credential. Feel free to review and select the [SHARE] option.',
+          title: 'Scan the QR code to start sharing',
+          text: 'Open the BC Wallet app and scan the QR code on the City of Vancouver business license application form to start sharing your homeowner credential with the City.',
           image: '/public/homeowner/useCases/covOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Receiving the information from your BC Wallet',
-          text: 'Once you agree to share the information, it will populate the form below. \nClick Next when you are done reviewing the information.',
+          title: 'Confirm the information to share',
+          text: 'In BC Wallet, view the request from City of Vancouver to share your homeowner credential. The City of Vancouver is requesting some of the information in your homeowner credential – but not all of it. Select the share button and notice the City receives the information.',
           requestOptions: {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
@@ -312,8 +312,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'CREDENTIAL',
-          title: 'Accepting the credential on your Wallet',
-          text: 'The City of Vancouver has successfully verified your application, please check your BC Wallet for a message offering you a digital Long Term Rental BL credential. Please click accept.',
+          title: 'Get the business licence credential',
+          text: "The City of Vancouver approved your business licence application and issued your licence. In BC Wallet, select the notifications menu and view the new credential offer from the City of Vancouver. Review the information that proves you're licensed to rent your secondary suite long-term. Scroll to the end and select the accept button.",
           issueCredentials: [
             {
               id: '',
@@ -368,8 +368,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'You’ve received the Long Term Rental (LTR) Business License. You can now use this credential to grant authorization to a tenant. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          title: 'Chapter complete!',
+          text: "You received a long-term rental business licence credential from the City of Vancouver. In just a few easy steps, you shared minimal information to get proof you're licensed to rent your secondary suite long-term.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
@@ -377,12 +377,12 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Issue Letter of Authorization to your tenant',
+      name: 'Give tenant permission to sublet short-term',
       screens: [
         {
           screenId: 'START',
-          title: 'Issue Letter of Authorization to your tenant',
-          text: "Sally's tenant, James, needs to apply for a permit to operate a Short Term Rental (STR) in the property. He has sent a request to Sally, she will need to use her BC Wallet to verify she is the homeowner to issue the Letter of Authorization to James.",
+          title: 'Give letter of authorization to tenant',
+          text: "As Sally, apply for a business licence from the City of Vancouver. You'll share your homeowner credential in your BC Wallet to answer questions on the application form that prove you own the home.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {

@@ -46,17 +46,17 @@ export const InfoModal: React.FC<Props> = ({ isModalOpen, setIsModalOpen, onComp
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4">
                   <div className="mt-5">
-                    <p className="font-semibold">This scenario requires prerequisite to progress.</p>
+                    <p className="font-semibold">Have you completed the Sally Homeowner scenario?</p>
                     <p className="mt-5 mb-5">
-                      If you have previously completed the prerequiste scenarios, click 'I have completed
-                      prerequisites'.
+                      If you have not completed Sally Homeowner's scenario you may not be able to explore James'
+                      scenario.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4 flex justify-between">
-                <button onClick={() => setIsModalOpen(false)}>BACK</button>
-                <SmallButton onClick={onCompleted} text={'I HAVE COMPLETED PREREQUISITES'} />
+                <button onClick={() => setIsModalOpen(false)}>No, go back</button>
+                <SmallButton onClick={onCompleted} text={"Yes, start James' scenario"} />
               </div>
             </motion.div>
           </div>
