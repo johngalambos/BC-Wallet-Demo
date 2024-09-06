@@ -13,8 +13,10 @@ export interface Props {
 export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
   const navigate = useNavigate()
 
-  const TITLE = 'Showcase Completed!'
-  const DESCRIPTION = 'Looking to leave some feedback? Take our survey and connect with us!'
+  const TITLE = 'Scenario complete!'
+  const DESCRIPTION =
+    'Have you completed both scenarios? If not, select the finish button and complete the James Tenant scenario next.'
+  const SUBTEXT = 'What do you think about using digital credentials to access City of Vancouver services?'
 
   return (
     <AnimatePresence>
@@ -44,6 +46,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                   <h2 className="text-xl font-medium text-grey-900">{TITLE}</h2>
                   <div className="mt-2 text-sm">
                     <p>{DESCRIPTION}</p>
+                    <p>{SUBTEXT}</p>
 
                     <a
                       href="https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de"

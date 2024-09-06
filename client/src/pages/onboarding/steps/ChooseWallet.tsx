@@ -69,25 +69,6 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, step, addOnboarding
           exit="exit"
           style={style}
         >
-          <div>
-            <p>
-              BC Wallet lets you receive, store and use digital credentials, and was made by the Government of
-              Government of British Columbia.{' '}
-              <a
-                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet"
-                style={{ color: '#0000EE' }}
-              >
-                Learn more about BC Wallet.
-              </a>
-              <div className="pt-4 flex-1 py-4 px-4">
-                <ul className={'list-disc'}>
-                  <li>Scan the QR code with your phone.</li>
-                  <li>Select the app store icon.</li>
-                  <li>Search your app store for BC wallet.</li>
-                </ul>
-              </div>
-            </p>
-          </div>
           <div className="pt-4 flex-1 mb-6">
             <div className="dark:text-white">
               <div
@@ -121,6 +102,25 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, step, addOnboarding
                 )}
               </div>
             </div>
+          </div>
+          <div>
+            <p>
+              BC Wallet lets you receive, store and use digital credentials, and was made by the Government of
+              Government of British Columbia.{' '}
+              <a
+                href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet"
+                style={{ color: '#0000EE' }}
+              >
+                Learn more about BC Wallet.
+              </a>
+              <div className="pt-4 flex-1 py-4 px-4">
+                <ul className={'list-disc'}>
+                  <li>Scan the QR code with your phone.</li>
+                  <li>Select the app store icon.</li>
+                  <li>Search your app store for BC wallet.</li>
+                </ul>
+              </div>
+            </p>
           </div>
         </motion.div>
         <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>

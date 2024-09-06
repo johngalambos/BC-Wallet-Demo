@@ -177,12 +177,12 @@ export const tenantCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Receive Letter of Authorization from landlord',
+      name: 'Receive landlord authorization',
       screens: [
         {
           screenId: 'START',
-          title: 'James Tenant receives notification of a Letter of Authorization issued by Sally Homeowner',
-          text: "James Tenant had previously requested authorization from his landlord Sally Homeowner to apply for a Short Term Rental Business Licence. James Tenant submitted an authorization request via the City of Vancouver's licencing portal and Sally has agreed and processed the letter of authorization.\nJames Tenant received an email with a link to the City of Vancouver's licencing portal where he will be able to download the letter of authorization to his BC Wallet.",
+          title: 'Receive landlord authorization',
+          text: "As James, you previously asked Sally Homeowner for permission to sublet and she agreed. Receive the letter of authorization credential from the City of Vancouver, on Sally's behalf. You'll share your person credential in your BC Wallet to prove your identity.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
@@ -271,7 +271,7 @@ export const tenantCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'STRDiBLCredential',
-      name: 'Apply for a STR DiBL Credential',
+      name: 'Get permission to rent short-term',
       screens: [
         {
           screenId: 'START',
@@ -381,7 +381,7 @@ export const tenantCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'STRListing',
-      name: 'Post a Short Term Rental Listing online',
+      name: 'Post listing on short-term rental platform',
       screens: [
         {
           screenId: 'START',

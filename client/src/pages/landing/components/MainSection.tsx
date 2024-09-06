@@ -44,7 +44,7 @@ export const MainSection: React.FC = () => {
         <motion.h1 variants={landingTitle}>
           City of Vancouver
           <br />
-          Digital credentials demo
+          digital credentials demo
         </motion.h1>
       </div>
       <div className="overflow-hidden">
@@ -73,7 +73,7 @@ export const MainSection: React.FC = () => {
         <motion.h1 variants={landingTitle}>
           City of Vancouver
           <br />
-          Digital credentials demo
+          digital credentials demo
         </motion.h1>
       </div>
       <div className="overflow-hidden">

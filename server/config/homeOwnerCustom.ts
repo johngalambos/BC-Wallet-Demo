@@ -138,7 +138,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
-      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
+      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to receive your letter of authorization credential from Sally Homeowner, apply for a business licence, and post your short-term rental listing.",
       image: '/public/common/onboarding-completed-light.svg',
       step: 5,
     },
@@ -377,26 +377,25 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       type: 'useCase',
       id: 'digitalLetterAuthorization',
-      name: 'Give tenant permission to sublet short-term',
+      name: 'Authorize tenant to sublet short-term',
       screens: [
         {
           screenId: 'START',
-          title: 'Issue letter of authorization to James Tenant',
-          text: "Regulations require that James Tenant seek authorization from Sally Homeowner to apply for a short-term rental business license. James Tenant submitted an authorization request via the City of Vancouver's licencing portal. \nSally received an email with a link to the licencing portal.",
+          title: 'Give tenant permission to sublet short-term',
+          text: "We've jumped forward in time. As Sally, you've rented to James Tenant for a while. Now, he's asking you if he can sublet short-term while he travels. You'll agree and grant him a letter of authorization credential using the City of Vancouver so that he can get a business licence. Again, you'll share your homeowner credential in your BC Wallet to prove you own the home and grant James permission.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title:
-            'Scan to agree to issue a Letter of Authorization for James Tenant to apply for a short-term rental business license',
-          text: "Sally clicked on the link contained in the email with the request from James Tenant. She will be asked to use her homeowner credential as proof that she is the home owner of the address in question. By sharing Sally's homeowner credential, Sally will trigger the issuance of a digital Letter of Authorization credential to James Tenant's BC Wallet.",
+          title: 'Scan the QR code to start sharing',
+          text: "You receive James's request as an email message from the City of Vancouver sent on his behalf. Open the BC Wallet app and scan the QR code in the message to start sharing your homeowner credential with the City.",
           image: '/public/homeowner/useCases/covHomeownerOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
           title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
+          text: 'In BC Wallet, view the request from City of Vancouver to share your homeowner credential. The City of Vancouver is requesting some of the information in your homeowner credential – but not all of it. Select the share button and notice the City receives the information.',
           requestOptions: {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
@@ -421,8 +420,8 @@ export const homeOwnerCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'Your tenant has been notified that you provided authorization to apply for a STR.',
+          title: 'Chapter complete!',
+          text: "The City of Vancouver has notified James that you've granted them a letter of authorization credential so that he can get a business licence. In just a few easy steps, you shared minimal information to prove you own the property.",
           image: '/public/lawyer2/onboarding/lawyer2Success.svg',
         },
       ],
