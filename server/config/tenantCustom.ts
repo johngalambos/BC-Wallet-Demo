@@ -102,7 +102,7 @@ export const tenantCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT_PERSON',
-      title: 'Get a person credential',
+      title: 'Get James Tenant person credential',
       text: "As James Tenant, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're James when you access government services online so you don't have to provide a photo of your ID.",
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
@@ -181,15 +181,16 @@ export const tenantCustom: CustomCharacter = {
       screens: [
         {
           screenId: 'START',
-          title: 'Receive Letter of Authorization',
-          text: 'James had previously requested authorization from his landlord to apply for a Short Term Rentals Business Licence with the City of Vancouver. His landlord agreed with his request and James has received an email notification with instructions to obtain a digital Letter of Authorization into his BC Wallet.',
+          title: 'James Tenant receives notification of a Letter of Authorization issued by Sally Homeowner',
+          text: "James Tenant had previously requested authorization from his landlord Sally Homeowner to apply for a Short Term Rental Business Licence. James Tenant submitted an authorization request via the City of Vancouver's licencing portal and Sally has agreed and processed the letter of authorization.\nJames Tenant received an email with a link to the City of Vancouver's licencing portal where he will be able to download the letter of authorization to his BC Wallet.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your information',
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/homeowner/useCases/covOverlay.png',
+          title:
+            'Scan to receive the digital Letter of Authorization for James Tenant to apply for a STR Business Licence',
+          text: 'Scan to receive the digital Letter of Authorization for James Tenant to apply for a STR Business Licence',
+          image: '/public/homeowner/useCases/covTenantOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {

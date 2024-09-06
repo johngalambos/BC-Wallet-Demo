@@ -72,7 +72,7 @@ export const homeOwnerCustom: CustomCharacter = {
     },
     {
       screenId: 'CONNECT_PERSON',
-      title: 'Get a person credential',
+      title: 'Get Sally Homeowner person credential',
       text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo of your ID.",
       image: '/public/lawyer2/onboarding/personCredPhone.svg',
       issuer_name: 'Service BC (Demo)',
@@ -327,7 +327,7 @@ export const homeOwnerCustom: CustomCharacter = {
                 },
                 {
                   name: 'family_name',
-                  value: 'Builder',
+                  value: 'Homeowner',
                 },
                 {
                   name: 'given_names',
@@ -381,15 +381,16 @@ export const homeOwnerCustom: CustomCharacter = {
       screens: [
         {
           screenId: 'START',
-          title: 'Give letter of authorization to tenant',
-          text: "As Sally, apply for a business licence from the City of Vancouver. You'll share your homeowner credential in your BC Wallet to answer questions on the application form that prove you own the home.",
+          title: 'Issue letter of authorization to James Tenant',
+          text: "Regulations require that James Tenant seek authorization from Sally Homeowner to apply for a short-term rental business license. James Tenant submitted an authorization request via the City of Vancouver's licencing portal. \nSally received an email with a link to the licencing portal.",
           image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Scan the QR Code to share your Homeowner credential',
-          text: 'The Homeowner Credential allows the City of Vancouver to verify in real time your relationship to the property without asking you to submit copies/images of your driver licence and other sensitive documents.',
-          image: '/public/homeowner/useCases/covOverlay.png',
+          title:
+            'Scan to agree to issue a Letter of Authorization for James Tenant to apply for a short-term rental business license',
+          text: "Sally clicked on the link contained in the email with the request from James Tenant. She will be asked to use her homeowner credential as proof that she is the home owner of the address in question. By sharing Sally's homeowner credential, Sally will trigger the issuance of a digital Letter of Authorization credential to James Tenant's BC Wallet.",
+          image: '/public/homeowner/useCases/covHomeownerOverlay.png',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
