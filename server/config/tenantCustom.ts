@@ -274,21 +274,21 @@ export const tenantCustom: CustomCharacter = {
       screens: [
         {
           screenId: 'START',
-          title: 'Apply for a STR DiBL Credential',
-          text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Letter of Authorization.',
+          title: 'Get permission to rent short-term',
+          text: "As James, apply for a business licence from the City of Vancouver. You'll share your letter of authorization credential in your BC Wallet to answer questions on the application form that prove you have Sally's permission to rent.",
           image: '/public/tenant/person-credential-james.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Start providing your credentials',
-          text: 'City of Vancouver offers a quick way to verify your credentials. Scan the QR code with your BC Wallet to get started.',
-          image: '/public/representative/useCases/covOverlay.png',
+          title: 'Scan the QR code to start sharing',
+          text: 'Open the BC Wallet app and scan the QR code on the City of Vancouver short-term rental business license application form to start sharing your letter of authorization credential with the City.',
+          image: '/public/tenant/apply-for-a-business-license.jpg',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. City of Vancouver is requesting that you prove only what is needed.",
+          title: 'Confirm the information to share',
+          text: 'In BC Wallet, view the request from City of Vancouver to share your letter of authorization credential. The City of Vancouver is requesting some of the information in your credential – but not all of it. Select the share button and notice the City receives the information.',
           requestOptions: {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
@@ -311,8 +311,8 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'CREDENTIAL',
-          title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided you with the STR DiBL Credential.',
+          title: 'Get the business licence credential',
+          text: "The City of Vancouver approved your business licence application and issued your licence. In BC Wallet, select the notifications menu and view the new credential offer from the City of Vancouver. Review the information that proves you're licensed to rent your suite short-term. Scroll to the end and select the accept button.",
           issueCredentials: [
             {
               id: '',
@@ -371,8 +371,8 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'You’ve received the STR DiBL Credential. You can now use this credential to publish listings for your home. It only took a few seconds and you revealed minimal information that City of Vancouver could easily and automatically trust.',
+          title: 'Chapter complete!',
+          text: "You received a short-term rental business licence credential from the City of Vancouver. In just a few easy steps, you shared minimal information to get proof you're licensed to rent your suite short-term.",
           image: '/public/tenant/chapter-complete-james.svg',
         },
       ],
@@ -384,21 +384,21 @@ export const tenantCustom: CustomCharacter = {
       screens: [
         {
           screenId: 'START',
-          title: 'Post a Short Term Rental Listing online',
-          text: "Imagine if listing platforms were able to instantly confirm the address of James's listing and ensure that James has a valid STR Business License with the municipality where he lives. This would increase the trust in the listings and lower the risk for renters. Let's follow James on his hypothetical journey to post a listing.",
+          title: 'Post listing on short-term rental platform',
+          text: "As James, list your suite on the fictitious rental platform Roam Like Home. You'll share your short-term rental business licence credential in your BC Wallet to prove you have the City of Vancouver's permission to rent. This increases trust in your listing and lowers risk for your guests.",
           image: '/public/tenant/person-credential-james.svg',
         },
         {
           screenId: 'CONNECTION',
-          title: 'Activate a Listing on STR.com',
-          text: 'After having used his Person credential to create an account on STR.com and creating a listing for his space, James uses his digital STR Business License to publish the listing. His credential is proof that he complies with his local municipal regulations. \nScan the QR code with your BC Wallet to get started.',
+          title: 'Scan the QR code to start sharing',
+          text: 'Open the BC Wallet app and scan the QR code on the Roam Like Home website to start sharing your business licence credential with Roam Like Home.',
           image: '/public/representative/useCases/strOverlay.png',
           verifier: { name: 'STR.com', icon: '/public/representative/icon-str.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. STR.com is requesting that you prove only what is needed.",
+          title: 'Confirm the information to share',
+          text: 'In BC Wallet, view the request from Roam Like Home to share your business licence credential. Roam Like Home is requesting some of the information in your credential – but not all of it. Select the share button and notice Roam Like Home receives the information.',
           requestOptions: {
             title: 'STR.com Request',
             text: 'STR.com would like some of your personal information.',
@@ -425,8 +425,8 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'STR.com has received your details. You can now publish your listing for your space. It only took a few seconds and you revealed minimal information that STR.com could easily and automatically trust.',
+          title: 'Chapter complete!',
+          text: 'You posted your suite for rent on Roam Like Home. In just a few easy steps, you shared minimal information to prove you have permission to rent the suite.',
           image: '/public/tenant/chapter-complete-james.svg',
         },
       ],
