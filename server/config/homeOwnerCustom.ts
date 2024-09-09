@@ -138,7 +138,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
-      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to receive your letter of authorization credential from Sally Homeowner, apply for a business licence, and post your short-term rental listing.",
+      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
       image: '/public/homeowner/chapter-complete-sally.svg',
       step: 5,
     },
