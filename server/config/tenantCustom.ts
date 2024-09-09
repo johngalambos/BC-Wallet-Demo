@@ -169,7 +169,7 @@ export const tenantCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
       text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
-      image: '/public/common/onboarding-completed-light.svg',
+      image: '/public/common/onboarding-completed-light-james.png',
       step: 5,
     },
   ],
