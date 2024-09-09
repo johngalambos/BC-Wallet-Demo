@@ -60,7 +60,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'SETUP_START',
       title: 'Learn about digital credentials',
       text: 'These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
-      image: '/public/common/getStarted.svg',
+      image: '/public/common/getStarted.png',
       step: 2,
     },
     {
