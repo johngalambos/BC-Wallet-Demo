@@ -169,7 +169,7 @@ export const tenantCustom: CustomCharacter = {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
       text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to get your proof of home ownership and apply for a business licence.",
-      image: '/public/common/onboarding-completed-light-james.png',
+      image: '/public/common/chapter-complete-james.png',
       step: 5,
     },
   ],
@@ -187,16 +187,15 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'CONNECTION',
-          title:
-            'Scan to receive the digital Letter of Authorization for James Tenant to apply for a STR Business Licence',
-          text: 'Scan to receive the digital Letter of Authorization for James Tenant to apply for a STR Business Licence',
-          image: '/public/homeowner/useCases/covTenantOverlay.png',
+          title: 'Scan the QR code to start sharing',
+          text: "You receive Sally's permission as an email message from the City of Vancouver sent on her behalf. Open the BC Wallet app and scan the QR code in the message to start sharing your person credential with the City.",
+          image: '/public/tenant/email-letter-of-authorization-approved.jpg',
           verifier: { name: 'City of Vancouver', icon: '/public/homeowner/icon-cov.png' },
         },
         {
           screenId: 'PROOF',
-          title: 'Confirm the information to send',
-          text: "BC Wallet will now ask you to confirm what to send. Notice how you're not sharing your entire credential. The City of Vancouver is requesting that you prove only what is needed.",
+          title: 'Confirm the information to share',
+          text: 'In BC Wallet, view the request from City of Vancouver to share your person credential. The City of Vancouver is requesting some of the information in your person credential – but not all of it. Select the share button and notice the City receives the information.',
           requestOptions: {
             title: 'City of Vancouver Request',
             text: 'City of Vancouver would like some of your personal information.',
@@ -218,8 +217,8 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'CREDENTIAL',
-          title: 'Receive credential',
-          text: 'Check your phone. City of Vancouver has provided James with the Letter of Authorization.',
+          title: 'Get the letter of authorization credential',
+          text: 'The City of Vancouver issued your letter of authorization from Sally. In BC Wallet, select the notifications menu and view the new credential offer from the City of Vancouver. Review the information that proves Sally authorizes you to short-term rent the suite on her property. Scroll to the end and select the accept button.',
           issueCredentials: [
             {
               id: '',
@@ -262,8 +261,8 @@ export const tenantCustom: CustomCharacter = {
         },
         {
           screenId: 'STEP_END',
-          title: "You're done!",
-          text: 'You’ve provided the City of Vancouver with the necessary information. It only took a few seconds and you revealed minimal information that the City of Vancouver could easily and automatically trust.',
+          title: 'Chapter complete!',
+          text: "You received a letter of authorization credential from the City of Vancouver on behalf of Sally Homeowner. In just a few easy steps, you shared minimal information to prove you have Sally's permission to short-term rent.",
           image: '/public/tenant/chapter-complete-james.svg',
         },
       ],
