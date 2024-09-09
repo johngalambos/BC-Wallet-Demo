@@ -74,7 +74,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'CONNECT_PERSON',
       title: 'Get Sally Homeowner person credential',
       text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo of your ID.",
-      image: '/public/homeowner/personCredPhoneSally.png',
+      image: '/public/homeowner/person-credential-sally.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
     },
@@ -82,7 +82,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'ACCEPT_PERSON',
       title: 'Add the credential to your wallet',
       text: 'Check your phone. You’ve received a credential offer from Service BC in your BC Wallet. You can use this credential to prove who you are online.',
-      image: '/public/lawyer2/onboarding/personCredPhoneSally.png',
+      image: '/public/homeowner/person-credential-sally.svg',
       step: 4,
       credentials: [
         {
@@ -153,7 +153,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Get proof that you own the property',
           text: "As Sally, apply for a homeowner credential from BC Land Title and Survey Authority (LTSA). You'll provide your person credential in your BC Wallet to prove your identity.",
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/homeowner/person-credential-sally.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -274,7 +274,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Get permission to rent long-term',
           text: "As Sally, apply for a business licence from the City of Vancouver. You'll share your homeowner credential in your BC Wallet to answer questions on the application form that prove you own the home.",
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/homeowner/person-credential-sally.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -383,7 +383,7 @@ export const homeOwnerCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Give tenant permission to sublet short-term',
           text: "We've jumped forward in time. As Sally, you've rented to James Tenant for a while. Now, he's asking you if he can sublet short-term while he travels. You'll agree and grant him a letter of authorization credential using the City of Vancouver so that he can get a business licence. Again, you'll share your homeowner credential in your BC Wallet to prove you own the home and grant James permission.",
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/homeowner/person-credential-sally.svg',
         },
         {
           screenId: 'CONNECTION',
