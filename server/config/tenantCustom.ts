@@ -104,7 +104,7 @@ export const tenantCustom: CustomCharacter = {
       screenId: 'CONNECT_PERSON',
       title: 'Get James Tenant person credential',
       text: "As James Tenant, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're James when you access government services online so you don't have to provide a photo of your ID.",
-      image: '/public/lawyer2/onboarding/personCredPhoneJames.png',
+      image: '/public/tenant/person-credential-james.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
     },
@@ -112,7 +112,7 @@ export const tenantCustom: CustomCharacter = {
       screenId: 'ACCEPT_PERSON',
       title: 'Add the credential to your wallet',
       text: 'Check your phone. You’ve received a credential offer from Service BC in your BC Wallet. You can use this credential to prove who you are online.',
-      image: '/public/lawyer2/onboarding/personCredPhoneJames.png',
+      image: '/public/tenant/person-credential-james.svg',
       step: 4,
       credentials: [
         {
@@ -183,7 +183,7 @@ export const tenantCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Receive landlord authorization',
           text: "As James, you previously asked Sally Homeowner for permission to sublet and she agreed. Receive the letter of authorization credential from the City of Vancouver, on Sally's behalf. You'll share your person credential in your BC Wallet to prove your identity.",
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/tenant/person-credential-james.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -277,7 +277,7 @@ export const tenantCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Apply for a STR DiBL Credential',
           text: 'James (that’s you in this demo) can apply for a STR DiBL credential from City of Vancouver and using his Letter of Authorization.',
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/tenant/person-credential-james.svg',
         },
         {
           screenId: 'CONNECTION',
@@ -387,7 +387,7 @@ export const tenantCustom: CustomCharacter = {
           screenId: 'START',
           title: 'Post a Short Term Rental Listing online',
           text: "Imagine if listing platforms were able to instantly confirm the address of James's listing and ensure that James has a valid STR Business License with the municipality where he lives. This would increase the trust in the listings and lower the risk for renters. Let's follow James on his hypothetical journey to post a listing.",
-          image: '/public/lawyer2/useCases/courtServices/bothCreds.svg',
+          image: '/public/tenant/person-credential-james.svg',
         },
         {
           screenId: 'CONNECTION',
