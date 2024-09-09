@@ -60,7 +60,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'SETUP_START',
       title: 'Learn about digital credentials',
       text: 'These digital credentials can include IDs, licenses, certificates, titles, and more. \nCustomer Value: \nUsing the BC Wallet is fast and simple, with an increasing number of uses to simplify access to services both online and in person. \n• It saves users from having to manually fill out forms by allowing the BC Wallet to automatically fill the form with the requested information using the data stored in digital credentials. \n• It saves staff time by eliminating the need to verify manually typed information in forms. Information that comes from the credentials is information that can be trusted because the user does not have the ability to modify the data; data arrives to the CoV systems as issued by the organization/Authority.',
-      image: '/public/common/getStarted.png',
+      image: '/public/common/getStarted.svg',
       step: 2,
     },
     {
@@ -74,7 +74,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'CONNECT_PERSON',
       title: 'Get Sally Homeowner person credential',
       text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo of your ID.",
-      image: '/public/lawyer2/onboarding/personCredPhoneSally.png',
+      image: '/public/homeowner/personCredPhoneSally.png',
       issuer_name: 'Service BC (Demo)',
       step: 4,
     },
