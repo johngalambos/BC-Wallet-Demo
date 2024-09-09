@@ -6,7 +6,7 @@ import { FiExternalLink, FiArrowRight } from 'react-icons/fi'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { buttonHover, fade, fadeDelay, landingTitle } from '../../../FramerAnimations'
-import landingScreen from '../../../assets/light/landing-screen.png'
+import landingScreen from '../../../assets/light/landing-screen.svg'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useDarkMode } from '../../../hooks/useDarkMode'
 import { setOnboardingStep } from '../../../slices/onboarding/onboardingSlice'
@@ -108,7 +108,7 @@ export const MainSection: React.FC = () => {
     >
       {isMobile ? renderMobileTitle : renderDesktopTitle}
       <div className="flex justify-center flex-grow">
-        <img className="m-5" src={landingScreen} alt="bcgov-phone-light" />
+        <img className="m-5 max-w-lg" src={landingScreen} alt="bcgov-phone-light" />
       </div>
     </motion.div>
   )
