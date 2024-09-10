@@ -19,9 +19,8 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
   const [isChangeModalOpen, setIsChangeModalOpen] = useState(false)
   const dispatch = useAppDispatch()
 
-  const MODAL_TITLE = 'This will reset your dashboard.'
-  const MODAL_DESCRIPTION = `Your current credentials will become invalid. Please make sure you've completed all the use cases
-  before you do this.`
+  const MODAL_TITLE = 'Are you sure?'
+  const MODAL_DESCRIPTION = `Select OK to return to the home page. This will clear your progress with this character and their scenario.`
 
   const reset = () => {
     trackSelfDescribingEvent({

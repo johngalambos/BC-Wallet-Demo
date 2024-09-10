@@ -231,7 +231,7 @@ export const OnboardingContainer: React.FC<Props> = ({
 
   const [leaveModal, setLeaveModal] = useState(false)
   const LEAVE_MODAL_TITLE = 'Are you sure you want to leave?'
-  const LEAVE_MODAL_DESCRIPTION = `You're progress will be lost and you'll be redirected to the homepage.`
+  const LEAVE_MODAL_DESCRIPTION = `Your progress will be lost and you'll be redirected to the homepage.`
   const showLeaveModal = () => setLeaveModal(true)
   const closeLeave = () => setLeaveModal(false)
 
