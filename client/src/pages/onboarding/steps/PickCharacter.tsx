@@ -33,7 +33,7 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
   const darkMode = useDarkMode()
   const defaultStep = 1
   const defaultTitle = `Choose a scenario`
-  const defaultText = `Explore how digital credentials help prove identity, qualifications, and relationships to things like property. \n1. Start as Sally Homeowner who wants to rent her secondary suite long-term to James Tenant. \n2. Continue as James Tenant who wants to sublet the suite short-term while he travels.`
+  const defaultText = `Explore how digital credentials help prove identity, qualifications, and relationships to things like property. Start as Sally Homeowner who wants to rent her secondary suite long-term to James Tenant. Continue as James Tenant who wants to sublet the suite short-term while he travels.`
   const titleText = title
   const mainText = text
 
