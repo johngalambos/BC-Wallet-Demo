@@ -69,40 +69,6 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, step, addOnboarding
           exit="exit"
           style={style}
         >
-          <div className="pt-4 flex-1 mb-6">
-            <div className="dark:text-white">
-              <div
-                className="flex bg-bcgov-white dark:bg-bcgov-black py-4 px-8"
-                style={{
-                  flexDirection: isMobile ? 'column' : 'row',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
-                  <img
-                    src={appStore}
-                    style={
-                      isMobile ? { width: '200px', marginBottom: '10px' } : { height: '50px', marginRight: '10px' }
-                    }
-                    alt="app store"
-                  />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
-                  <img
-                    src={playStore}
-                    style={isMobile ? { width: '200px' } : { height: '50px' }}
-                    alt="google play store"
-                  />
-                </a>
-                {!isMobile && (
-                  <div>
-                    <QRCode value={`${baseUrl}/qr`} size={125} />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
           <div>
             <p>
               BC Wallet lets you receive, store and use digital credentials, and was made by the Government of
@@ -121,6 +87,40 @@ export const ChooseWallet: React.FC<Props> = ({ title, text, step, addOnboarding
                 </ul>
               </div>
             </p>
+          </div>
+          <div className="pt-4 flex-1 mb-6">
+            <div className="dark:text-white">
+              <div
+                className="flex bg-bcgov-white dark:bg-bcgov-black py-4 px-8"
+                style={{
+                  flexDirection: isMobile ? 'column' : 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                {!isMobile && (
+                  <div>
+                    <QRCode value={`${baseUrl}/qr`} size={125} />
+                  </div>
+                )}
+                <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
+                  <img
+                    src={appStore}
+                    style={
+                      isMobile ? { width: '200px', marginBottom: '10px' } : { height: '50px', marginRight: '10px' }
+                    }
+                    alt="app store"
+                  />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
+                  <img
+                    src={playStore}
+                    style={isMobile ? { width: '200px' } : { height: '50px' }}
+                    alt="google play store"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
         <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>

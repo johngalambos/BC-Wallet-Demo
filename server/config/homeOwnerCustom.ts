@@ -67,7 +67,7 @@ export const homeOwnerCustom: CustomCharacter = {
       screenId: 'CHOOSE_WALLET',
       title: 'Install BC Wallet',
       text: 'To complete the scenario as Sally Homeowner, you will need to install the BC Wallet app on your iOS or Android smartphone.',
-      image: '/public/common/app-store-screenshots.png',
+      image: '/public/common/app-store-screenshots.svg',
       step: 3,
     },
     {
