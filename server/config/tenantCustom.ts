@@ -103,7 +103,7 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'CONNECT_PERSON',
       title: 'Get James Tenant person credential',
-      text: "As James Tenant, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're James when you access government services online so you don't have to provide a photo of your ID.",
+      text: "As James Tenant, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're James when you access government services online so you don't have to provide a photo ID.",
       image: '/public/tenant/person-credential-james.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
@@ -168,8 +168,8 @@ export const tenantCustom: CustomCharacter = {
     {
       screenId: 'SETUP_COMPLETED',
       title: 'Recap and next steps',
-      text: "Great! You got your person credential and added it to your BC Wallet. \n \nLet's use the person credential to receive your letter of authorization credential from Sally Homeowner, apply for a business licence, and post your short-term rental listing.",
-      image: '/public/common/chapter-complete-james.png',
+      text: "Great! You got your person credential and added it to your BC Wallet. Let's use the person credential to receive your letter of authorization credential from Sally Homeowner, apply for a business licence, and post your short-term rental listing.",
+      image: '/public/tenant/chapter-complete-james.svg',
       step: 5,
     },
   ],
