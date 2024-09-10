@@ -73,7 +73,7 @@ export const homeOwnerCustom: CustomCharacter = {
     {
       screenId: 'CONNECT_PERSON',
       title: 'Get Sally Homeowner person credential',
-      text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo of your ID.",
+      text: "As Sally Homeowner, you'll use your BC Services Card account to receive your person credential and add it to your BC Wallet. The person credential proves that you're Sally when you access government services online so you don't have to provide a photo ID.",
       image: '/public/homeowner/person-credential-sally.svg',
       issuer_name: 'Service BC (Demo)',
       step: 4,
